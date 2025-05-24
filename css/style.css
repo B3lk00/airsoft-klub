@@ -129,6 +129,22 @@ h2 {
     opacity: 1;
     transform: translateY(0);
 }
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #7ac142;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
 
 footer {
     text-align: center;
