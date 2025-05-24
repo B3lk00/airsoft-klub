@@ -6,7 +6,6 @@ body {
   padding: 0;
 }
 
-
 nav {
   background-color: #1b2e1f;
   padding: 1rem;
@@ -14,6 +13,14 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
+nav a {
+  color: #a9ff9b;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
 
 nav a {
   color: #a9ff9b;
