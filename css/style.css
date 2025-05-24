@@ -1,101 +1,86 @@
+/* css/style.css */
+
 body {
-  background-image: url('../assets/logo.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain; /* ili 'cover' ako želiš da pokrije ceo ekran */
-  background-attachment: fixed; /* pozadina ostaje na mestu pri skrolovanju */
-  background-color: #101f14; /* boja iza slike u slučaju providnosti */
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #eee;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
 }
 
-nav {
-  background-color: #1b2e1f;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  color: #a9ff9b;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-
-nav a {
-  color: #a9ff9b;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-
-footer {
-  background-color: #1b2e1f;
-  color: #aaa;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-
-nav {
-  background-color: #1b2e1f;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  height: 60px;
-  width: auto;
-  z-index: 1000;
+    height: 60px;
 }
 
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
 
 .nav-links a {
-  color: #a9ff9b;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+    color: #4caf50;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin: 20px 0;
+.hero {
+    background: url('../assets/logo.png') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.gallery img {
-  width: 60px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-  cursor: pointer;
+.hero-text {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #388e3c;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2e2e2e;
+    margin-top: 2rem;
+}
+
