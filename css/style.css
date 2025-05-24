@@ -318,5 +318,12 @@ h2 {
   gap: 20px;
 }
 
+.special-font {
+  font-family: 'Roboto', Courier, monospace;  /* primer drugog fonta */
+  font-weight: bold;
+  color: #4caf50; /* možeš i boju da menjaš */
+}
+
+
 
 
