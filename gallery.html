@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <title>Galerija | Airsoft Klub Kojot</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/smooth-scroll.js" defer></script>
-    <script src="js/anim.js" defer></script>
-    <script src="js/lightbox.js" defer></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Galerija</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-category {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .category-card {
+      width: 300px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #7ac142;
+    }
+
+    .category-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-overlay h2 {
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <img src="assets/logo.png" alt="Logo" class="logo">
-        <ul class="nav-links">
-            <li><a href="index.html">Početna</a></li>
-            <li><a href="about.html">O Nama</a></li>
-            <li><a href="gallery.html">Galerija</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-    </nav>
 
- 
-<section class="gallery container">
-  <h2>Galerija</h2>
-  <div class="gallery-grid">
-    <a href="trening.html" class="folder-box">
-      <div class="folder-image" style="background-image: url('assets/trening-cover.jpg');"></div>
-      <h3>Slike sa Treninga</h3>
-    </a>
+<header>
+  <h1>Galerija</h1>
+</header>
 
-    <a href="milsim.html" class="folder-box">
-      <div class="folder-image" style="background-image: url('assets/milsim-cover.jpg');"></div>
-      <h3>Slike sa Milsim-a</h3>
-    </a>
-  </div>
-</section>
-
-
-    <footer>
-    <div class="footer-content">
-        <p>© 2025 Airsoft Klub Kojot | Dizajn: TvojTim</p>
-        <div class="social-links">
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">YouTube</a>
-        </div>
+<section class="gallery-category container">
+  <a href="trening.html" class="category-card" style="background-image: url('assets/trening/trening1.jpg');">
+    <div class="category-overlay">
+      <h2>Slike sa Treninga</h2>
     </div>
-</footer>
+  </a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <a href="milsim.html" class="category-card" style="background-image: url('assets/milsim/milsim1.jpg');">
+    <div class="category-overlay">
+      <h2>Slike sa Milsim-a</h2>
+    </div>
+  </a>
+</section>
     
+
 </body>
 </html>
