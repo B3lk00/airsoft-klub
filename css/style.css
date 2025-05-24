@@ -1,10 +1,16 @@
 body {
-  background-color: #101f14;
-  color: #eee;
-  font-family: Arial, sans-serif;
+  background-image: url('../assets/logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* ili 'cover' ako želiš da pokrije ceo ekran */
+  background-attachment: fixed; /* pozadina ostaje na mestu pri skrolovanju */
+  background-color: #101f14; /* boja iza slike u slučaju providnosti */
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  color: #eee;
 }
+
 
 nav {
   background-color: #1b2e1f;
