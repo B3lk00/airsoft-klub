@@ -146,5 +146,22 @@ h2 {
 .social-links a:hover {
     text-decoration: underline;
 }
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.partner-logos img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.partner-logos img:hover {
+    transform: scale(1.1);
+}
 
 
