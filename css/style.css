@@ -1,61 +1,108 @@
-/* Osnovna pozadina i boje za sekcije */
-.about-section,
-.gallery-section,
-.contact-section {
-  background-color: #121212; /* tamna, skoro crna pozadina */
-  color: #cde8c7;            /* svetlo zelena boja za tekst */
-  padding: 60px 20px;
+/* style.css */
+
+/* Reset i osnovni stilovi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Osiguraj da linkovi u sekcijama budu vidljivi */
-.about-section a,
-.gallery-section a,
-.contact-section a {
-  color: #a1c57d; /* mekša zelena */
-  text-decoration: none;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Tamna pozadina za ceo sajt */
+  color: #cde8c7; /* Svetlo zelena boja teksta */
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-.about-section a:hover,
-.gallery-section a:hover,
-.contact-section a:hover {
-  text-decoration: underline;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Dodaj malo razmaka između stavki */
-.container h2 {
-  margin-bottom: 20px;
-  color: #7ec57e;
-}
+/* NAVBAR */
 
-/* Stil forme u kontakt sekciji */
-.contact-form input,
-.contact-form textarea {
-  background-color: #1e1e1e;
-  border: 1px solid #2f4f2f;
-  color: #cde8c7;
-  padding: 10px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  position: fixed;
   width: 100%;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  font-family: inherit;
+  background-color: rgba(18, 18, 18, 0.95);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #a1c57d;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
   color: #7ec57e;
 }
 
-.contact-form button.btn {
+/* HERO SECTION */
+
+.hero-header {
+  height: 100vh;
+  background: url('../assets/slike/camo-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(18, 18, 18, 0.75);
+  z-index: 1;
+}
+
+.hero-header .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: #cde8c7;
+}
+
+.hero-header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-header p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
   background-color: #3d6b3d;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  cursor: pointer;
+  color: white;
   font-weight: 700;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button.btn:hover {
-  background-color: #5a9c5a;
-}
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s
