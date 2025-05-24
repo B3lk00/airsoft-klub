@@ -24,3 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function showCategory(category) {
+  document.querySelector('.gallery-folders').style.display = 'none';
+
+  if (category === 'trening') {
+    document.getElementById('trening-gallery').classList.remove('hidden');
+  } else if (category === 'milsim') {
+    document.getElementById('milsim-gallery').classList.remove('hidden');
+  }
+}
+
+function hideCategory() {
+  document.getElementById('trening-gallery').classList.add('hidden');
+  document.getElementById('milsim-gallery').classList.add('hidden');
+  document.querySelector('.gallery-folders').style.display = 'flex';
+}
