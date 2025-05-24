@@ -1,59 +1,33 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <title>Galerija - Airsoft Klub Kojot</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerija - Airsoft Klub Kojot</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Početna</a></li>
-            <li><a href="about.html">O nama</a></li>
-            <li><a href="gallery.html" class="active">Galerija</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-        </ul>
+
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="logo">Airsoft Klub Kojot</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="gallery.html" class="active">Galerija</a></li>
+        <li><a href="about.html">O nama</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section class="container">
-        <h2>Galerija</h2>
-        <div class="gallery-category">
-            <a href="#trening-section" class="category-card" style="background-image: url('assets/trening/trening1.jpg');">
-                <div class="category-overlay">
-                    <h2>Slike sa Treninga</h2>
-                </div>
-            </a>
+  <main class="container">
 
-            <a href="#milsim-section" class="category-card" style="background-image: url('assets/milsim/milsim1.jpg');">
-                <div class="category-overlay">
-                    <h2>Slike sa Milsim-a</h2>
-                </div>
-            </a>
+    <section id="gallery">
+      <h2>Galerija</h2>
+      <div class="gallery-folders">
+        <div class="folder" onclick="showCategory('trening')">
+          <img src="assets/trening-cover.jpg" alt="Trening" />
+          <p>Slike sa Treninga</p>
         </div>
-    </section>
-
-    <section id="trening-section" class="container">
-        <h2>Slike sa Treninga</h2>
-        <div class="gallery-grid">
-            <img src="assets/trening/trening1.jpg" alt="Trening 1">
-            <img src="assets/trening/trening2.jpg" alt="Trening 2">
-            <!-- Dodaj još slika -->
-        </div>
-    </section>
-
-    <section id="milsim-section" class="container">
-        <h2>Slike sa Milsim-a</h2>
-        <div class="gallery-grid">
-            <img src="assets/milsim/milsim1.jpg" alt="Milsim 1">
-            <img src="assets/milsim/milsim2.jpg" alt="Milsim 2">
-            <!-- Dodaj još slika -->
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Airsoft Klub Kojot</p>
-    </footer>
-</body>
-</html>
-
+        <div class="folder" onclick="showCategory('milsim')">
