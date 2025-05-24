@@ -257,6 +257,32 @@ h2 {
     flex-direction: column;
 }
 
+<!-- folder box -->
+
+.folder-box {
+    text-align: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.folder-box:hover {
+    transform: scale(1.05);
+}
+
+.folder-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.folder-box h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
 
 
 
