@@ -284,20 +284,57 @@ h2 {
     margin: 0;
 }
 
-.back-button {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #4caf50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+
+
+.gallery-folders {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.back-button:hover {
-    background-color: #388e3c;
+.folder {
+  text-align: center;
+  cursor: pointer;
 }
+
+.folder img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.folder img:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 
 
