@@ -1,73 +1,17 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="hr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airsoft Klub Kojot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('assets/logo.png') center center fixed;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        header, main, footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 20px;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .feature {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        footer {
-            text-align: center;
-            font-size: 0.9em;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/logo.png" alt="Airsoft Klub Kojot Logo" width="80">
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Airsoft Klub Kojot" class="logo">
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Početna</a></li>
@@ -78,31 +22,16 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
+    <section class="hero">
+        <div class="hero-text">
             <h1>Dobrodošli u Airsoft Klub Kojot</h1>
-            <p>Strastveni tim posvećen adrenalinu, strategiji i timskom duhu!</p>
+            <p>Strast, timski rad i adrenalinska zabava</p>
             <a href="about.html" class="btn">Saznaj više</a>
-        </section>
-
-        <section class="features">
-            <div class="feature">
-                <h2>Naša Misija</h2>
-                <p>Promovišemo fair play, timski rad i vojnu simulaciju kroz airsoft sport.</p>
-            </div>
-            <div class="feature">
-                <h2>Galerija</h2>
-                <p>Uskoro ubacujemo slike sa terena! Prati nas za najnovije akcione fotke.</p>
-            </div>
-            <div class="feature">
-                <h2>Pridruži se</h2>
-                <p>Želiš da postaneš član? Kontaktiraj nas i postani deo Kojot tima!</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Airsoft Klub Kojot | Sva prava zadržana</p>
+        <p>&copy; 2025 Airsoft Klub Kojot. Sva prava zadržana.</p>
     </footer>
 
     <script src="js/script.js"></script>
