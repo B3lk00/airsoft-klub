@@ -94,29 +94,6 @@ h2 {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.gallery-grid img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1b1b1b;
-    margin-top: 2rem;
-}
-/* galerija */
-.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -135,3 +112,10 @@ footer {
   box-shadow: 0 0 15px #7ac142;
 }
 
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1b1b1b;
+    margin-top: 2rem;
+}
