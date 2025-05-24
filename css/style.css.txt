@@ -26,7 +26,7 @@ nav a.active {
   color: #c0ff90;
   border-bottom: 2px solid #c0ff90;
 }
-.hero {
+hero {
   background: url('../assets/camo-bg.jpg') no-repeat center center/cover;
   padding: 5rem 2rem;
   text-align: center;
