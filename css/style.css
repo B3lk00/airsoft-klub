@@ -34,21 +34,6 @@ nav a {
   font-weight: bold;
 }
 
-.hero {
-  background: url('../assets/camo-bg.jpg') no-repeat center center/cover;
-  padding: 5rem 2rem;
-  text-align: center;
-  color: #fff;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
 
 footer {
   background-color: #1b2e1f;
