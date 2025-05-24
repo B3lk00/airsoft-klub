@@ -24,3 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function showCategory(category) {
+  document.querySelector('.gallery-folders').style.display = 'none';
+  document.getElementById(category + '-gallery').style.display = 'grid';
+}
+
+function hideCategory() {
+  document.querySelector('.gallery-folders').style.display = 'flex';
+  document.getElementById('trening-gallery').style.display = 'none';
+  document.getElementById('milsim-gallery').style.display = 'none';
+}
