@@ -1,4 +1,4 @@
-// Primer efekta: fade in kada se stranica učita
+
 document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
   hero.style.opacity = 0;
