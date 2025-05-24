@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8">
-  <title>Galerija</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .gallery-category {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .category-card {
-      width: 300px;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .category-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #7ac142;
-    }
-
-    .category-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .category-overlay h2 {
-      color: #fff;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Galerija - Airsoft Klub Kojot</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="gallery.html" class="active">Galerija</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
 
-<header>
-  <h1>Galerija</h1>
-</header>
+    <section class="container">
+        <h2>Galerija</h2>
+        <div class="gallery-category">
+            <a href="#trening-section" class="category-card" style="background-image: url('assets/trening/trening1.jpg');">
+                <div class="category-overlay">
+                    <h2>Slike sa Treninga</h2>
+                </div>
+            </a>
 
-<section class="gallery-category container">
-  <a href="gallery.html" class="back-button">⬅ Nazad na galeriju</a>
-    <div class="category-overlay">
-      <h2>Slike sa Treninga</h2>
-    </div>
-  </a>
+            <a href="#milsim-section" class="category-card" style="background-image: url('assets/milsim/milsim1.jpg');">
+                <div class="category-overlay">
+                    <h2>Slike sa Milsim-a</h2>
+                </div>
+            </a>
+        </div>
+    </section>
 
-  <a href="gallery.html" class="back-button">⬅ Nazad na galeriju</a>
-    <div class="category-overlay">
-      <h2>Slike sa Milsim-a</h2>
-    </div>
-  </a>
-</section>
-    
+    <section id="trening-section" class="container">
+        <h2>Slike sa Treninga</h2>
+        <div class="gallery-grid">
+            <img src="assets/trening/trening1.jpg" alt="Trening 1">
+            <img src="assets/trening/trening2.jpg" alt="Trening 2">
+            <!-- Dodaj još slika -->
+        </div>
+    </section>
 
+    <section id="milsim-section" class="container">
+        <h2>Slike sa Milsim-a</h2>
+        <div class="gallery-grid">
+            <img src="assets/milsim/milsim1.jpg" alt="Milsim 1">
+            <img src="assets/milsim/milsim2.jpg" alt="Milsim 2">
+            <!-- Dodaj još slika -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Airsoft Klub Kojot</p>
+    </footer>
 </body>
 </html>
+
