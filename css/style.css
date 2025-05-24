@@ -111,14 +111,6 @@ h2 {
   transform: scale(1.05);
   box-shadow: 0 0 15px #7ac142;
 }
-
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1b1b1b;
-    margin-top: 2rem;
-}
 .page-section {
     background-color: #181818;
     padding: 80px 20px;
@@ -126,5 +118,12 @@ footer {
     margin: 40px auto;
     max-width: 1000px;
     box-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1b1b1b;
+    margin-top: 2rem;
 }
 
