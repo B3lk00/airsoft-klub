@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.getElementById('lightbox-close');
-  const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
+  const prevBtn = document.getElementById('lightbox-prev');
 
   let currentIndex = 0;
 
@@ -29,28 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      showLightbox(index);
-    });
+    img.addEventListener('click', () => showLightbox(index));
   });
 
   closeBtn.addEventListener('click', hideLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
 
-  // Klik na pozadinu zatvara lightbox
+  // Takođe možeš da zatvoriš lightbox klikom van slike:
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      hideLightbox();
-    }
+    if (e.target === lightbox) hideLightbox();
   });
 
-  // Kontrola tastature
+  // Opcionalno: zatvori ESC tasterom
   document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('hidden')) {
-      if (e.key === 'Escape') hideLightbox();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+      hideLightbox();
     }
   });
 });
