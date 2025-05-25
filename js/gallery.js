@@ -91,8 +91,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
- // Dugme nazad na početnu stranicu
-  backToHome.addEventListener('click', () => {
-    window.location.href = 'index.html';  // ili '/' ako si na root domeni
-  });
+
+// Funkcija koja vodi na početnu stranicu
+function backToHome() {
+    window.location.href = "index.html"; // ili "/" ako koristiš root
+}
+
+// Povezivanje dugmeta s funkcijom
+document.addEventListener('DOMContentLoaded', function() {
+    const backBtn = document.getElementById('back-to-home');
+    if (backBtn) {
+        backBtn.addEventListener('click', backToHome);
+    }
+});
+
 
