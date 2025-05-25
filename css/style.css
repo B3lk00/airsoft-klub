@@ -332,6 +332,10 @@ h2 {
   opacity: 0.8;
 }
 
+.hidden {
+  display: none;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -350,9 +354,66 @@ h2 {
   transform: scale(1.05);
 }
 
-.hidden {
-  display: none;
+/* Lightbox stilovi kao što već imaš */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: auto;
 }
+
+#lightbox.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#lightbox .nav span {
+  position: absolute;
+  top: 50%;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#lightbox .nav span:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+#lightbox .prev {
+  left: 15px;
+}
+
+#lightbox .next {
+  right: 15px;
+}
+
 
 button {
   display: block;
@@ -371,7 +432,7 @@ button:hover {
   background-color: #388e3c;
 }
 
-/* Lightbox */
+/* Lightbox stilovi kao što već imaš */
 #lightbox {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -380,14 +441,12 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-
-  pointer-events: auto; /* dozvoli klikove kad je vidljiv */
-  user-select: none; /* ne dozvoli selekciju pozadine */
+  pointer-events: auto;
 }
 
 #lightbox.hidden {
   display: none;
-  pointer-events: none; /* onemogući klikove kad je skriven */
+  pointer-events: none;
 }
 
 #lightbox-img {
@@ -395,9 +454,6 @@ button:hover {
   max-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 0 20px #000;
-
-  pointer-events: auto; /* dozvoli klik na sliku */
-  user-select: auto;
 }
 
 #lightbox .close {
@@ -407,8 +463,6 @@ button:hover {
   font-size: 36px;
   color: white;
   cursor: pointer;
-
-  pointer-events: auto; /* dozvoli klik */
   user-select: none;
 }
 
@@ -418,14 +472,12 @@ button:hover {
   font-size: 48px;
   color: white;
   cursor: pointer;
+  user-select: none;
   padding: 0 15px;
   transform: translateY(-50%);
   background-color: rgba(0,0,0,0.3);
   border-radius: 4px;
   transition: background-color 0.3s ease;
-
-  pointer-events: auto; /* dozvoli klik */
-  user-select: none;
 }
 
 #lightbox .nav span:hover {
