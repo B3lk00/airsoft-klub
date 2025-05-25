@@ -402,8 +402,8 @@ button:hover {
 }
 
 #simple-lightbox img {
-  max-width: 90%;
-  max-height: 85vh;
+  max-width: 60%;
+  max-height: 50vh;
   border-radius: 8px;
   box-shadow: 0 0 25px #000;
 }
