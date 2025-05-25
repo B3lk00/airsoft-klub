@@ -451,7 +451,7 @@ button:hover {
 #images-container img {
   width: 150px;
   height: auto;
-  max-width: 100%;
+  max-width: 150%;
   border-radius: 8px;
   cursor: pointer;
   object-fit: cover;
