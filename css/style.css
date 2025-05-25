@@ -442,40 +442,7 @@ button:hover {
 }
 //---------------------//
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
 
-.image-item {
-  background-color: #222;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.image-item img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-
-.image-description {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-#backButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
 
 //-------------------------------//
 
