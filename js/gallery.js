@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.getElementById('lightbox-close');
 
-  // Slike po folderima
-  const images = {
-    trening: [
-      'assets/trening1.jpg',
-      'assets/trening2.jpg',
-      'assets/trening3.jpg'
-    ],
-    milsim: [
-      'assets/milsim1.jpg',
-      'assets/milsim2.jpg',
-      'assets/milsim3.jpg'
-    ]
+  // Konfiguracija: folderi + broj slika
+  const folders = {
+    'slike-sa-treninga': {
+      path: 'assets/slike-sa-treninga/',
+      count: 5, // koliko slika ima u tom folderu
+      prefix: 'trening', // ime fajla: trening1.jpg, trening2.jpg...
+    },
+    'slike-sa-milsim': {
+      path: 'assets/slike-sa-milsim/',
+      count: 4,
+      prefix: 'milsim',
+    },
   };
 
   // Klik na folder
@@ -32,18 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Prikazi slike iz foldera
   function showFolderGallery(folderKey) {
+    const folderData = folders[folderKey];
+    if (!folderData) return;
+
     foldersContainer.classList.add('hidden');
     folderGallery.classList.remove('hidden');
 
     galleryGrid.innerHTML = '';
-    images[folderKey].forEach(src => {
+    for (let i = 1; i <= folderData.count; i++) {
+      const imgSrc = `${folderData.path}${folderData.prefix}${i}.jpg`;
       const img = document.createElement('img');
-      img.src = src;
+      img.src = imgSrc;
       img.alt = '';
       img.classList.add('gallery-thumb');
-      img.addEventListener('click', () => openLightbox(src));
+      img.addEventListener('click', () => openLightbox(imgSrc));
       galleryGrid.appendChild(img);
-    });
+    }
   }
 
   // Nazad na foldere
@@ -73,4 +77,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
