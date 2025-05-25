@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.classList.remove('hidden');
   }
 
-  function hideLightbox() {
-    lightbox.classList.add('hidden');
-  }
+function hideLightbox() {
+  lightbox.classList.add('hidden');
+}
 
   function showNext() {
     currentIndex = (currentIndex + 1) % images.length;
