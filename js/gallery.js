@@ -111,3 +111,50 @@ function backToHome() {
 });
 
 
+//----------------------------------------------------------------------------------------
+const folderImages = {
+    trening: [
+        { src: 'trening1.jpg', description: 'Poligon A - 12.05.2025' },
+        { src: 'trening2.jpg', description: 'Poligon B - 19.05.2025' },
+        { src: 'trening3.jpg', description: 'Poligon C - 25.05.2025' }
+    ],
+    milsim: [
+        { src: 'milsim1.jpg', description: 'Šuma K - 03.04.2025' },
+        { src: 'milsim2.jpg', description: 'Brdo Z - 10.04.2025' },
+        { src: 'milsim3.jpg', description: 'Reka J - 17.04.2025' }
+    ],
+   
+};
+
+function openFolder(folderName) {
+    const galleryContainer = document.querySelector('.gallery-grid');
+    galleryContainer.innerHTML = ''; // očisti prethodne slike
+
+    const images = folderImages[folderName];
+    if (!images || images.length === 0) {
+        galleryContainer.innerHTML = '<p>Nema slika u ovom folderu.</p>';
+        return;
+    }
+
+    images.forEach(img => {
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('image-item');
+
+        const imageEl = document.createElement('img');
+        imageEl.src = `assets/${img.src}`;
+        imageEl.alt = img.description;
+
+        const descriptionEl = document.createElement('p');
+        descriptionEl.textContent = img.description;
+        descriptionEl.classList.add('image-description');
+
+        imgContainer.appendChild(imageEl);
+        imgContainer.appendChild(descriptionEl);
+
+        galleryContainer.appendChild(imgContainer);
+    });
+}
+
+
+
+
