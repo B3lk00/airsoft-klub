@@ -90,11 +90,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
 });
-
-// Dugme nazad
-  backButton.addEventListener('click', () => {
-    gallerySection.classList.add('hidden');
-    folderSection.classList.remove('hidden');
-    galleryImages.innerHTML = ''; // očisti slike
-  });
-
