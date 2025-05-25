@@ -442,26 +442,41 @@ button:hover {
 }
 //---------------------//
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
 .image-item {
-    text-align: center;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .image-item img {
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.image-item img:hover {
-    transform: scale(1.05);
+  max-width: 100%;
+  border-radius: 4px;
 }
 
 .image-description {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #ccc;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #ccc;
 }
+
+#backButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 //-------------------------------//
 
 
