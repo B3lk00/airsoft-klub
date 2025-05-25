@@ -449,9 +449,8 @@ button:hover {
 }
 
 #images-container img {
-  width: 250px;
+  width: 100%;
   height: auto;
-  max-width: 150%;
   border-radius: 8px;
   cursor: pointer;
   object-fit: cover;
