@@ -450,7 +450,7 @@ button:hover {
 
 #images-container img {
   width: 100%;
-  height: auto;
+  height: 50;
   border-radius: 8px;
   cursor: pointer;
   object-fit: cover;
