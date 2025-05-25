@@ -8,19 +8,15 @@
 </head>
 <body>
 
-  <section class="container">
-    <h2>Galerija</h2>
-
-    <div class="gallery-folders">
-      <div class="folder fade-in" onclick="showCategory('trening')">
-        <img src="assets/trening-cover.jpg" alt="Trening">
-        <p>Slike sa Treninga</p>
-      </div>
-      <div class="folder fade-in" onclick="showCategory('milsim')">
-        <img src="assets/milsim-cover.jpg" alt="Milsim">
-        <p>Slike sa Milsim-a</p>
-      </div>
-    </div>
+<section class="gallery container">
+  <h2>Galerija</h2>
+  <div class="gallery-grid">
+    <img src="assets/trening1.jpg" alt="Trening 1" class="gallery-img" data-index="0">
+    <img src="assets/trening2.jpg" alt="Trening 2" class="gallery-img" data-index="1">
+    <img src="assets/milsim1.jpg" alt="Milsim 1" class="gallery-img" data-index="2">
+    <img src="assets/milsim2.jpg" alt="Milsim 2" class="gallery-img" data-index="3">
+  </div>
+</section>
 
     <div id="trening-gallery" class="hidden">
       <h3>Slike sa Treninga</h3>
@@ -44,15 +40,15 @@
   </section>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="hidden">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-    <div class="nav">
-      <span class="prev" onclick="prevImage()">&#10094;</span>
-      <span class="next" onclick="nextImage()">&#10095;</span>
-    </div>
+<div id="lightbox" class="hidden">
+  <span class="close" id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div class="nav">
+    <span class="prev" id="lightbox-prev">&#10094;</span>
+    <span class="next" id="lightbox-next">&#10095;</span>
   </div>
+</div>
 
-  <script src="js/gallery.js"></script>
+ <script src="js/gallery.js" defer></script>
 </body>
 </html>
