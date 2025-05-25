@@ -301,8 +301,7 @@ h2 {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #4caf50;
+  border-radius: 50px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
