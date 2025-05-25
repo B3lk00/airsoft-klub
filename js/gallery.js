@@ -112,48 +112,61 @@ function backToHome() {
 
 
 //----------------------------------------------------------------------------------------
-const folderImages = {
+document.addEventListener('DOMContentLoaded', function() {
+  const folders = document.querySelectorAll('.folder');
+  const galleryGrid = document.querySelector('.gallery-grid');
+  const backButton = document.getElementById('backButton');
+
+  const folderImages = {
     trening: [
-        { src: 'trening1.jpg', description: 'Poligon A - 12.05.2025' },
-        { src: 'trening2.jpg', description: 'Poligon B - 19.05.2025' },
-        { src: 'trening3.jpg', description: 'Poligon C - 25.05.2025' }
+      { src: 'trening1.jpg', description: 'Lokacija: Park, Datum: 12.05.2024' },
+      { src: 'trening2.jpg', description: 'Lokacija: Šuma, Datum: 18.05.2024' }
     ],
     milsim: [
-        { src: 'milsim1.jpg', description: 'Šuma K - 03.04.2025' },
-        { src: 'milsim2.jpg', description: 'Brdo Z - 10.04.2025' },
-        { src: 'milsim3.jpg', description: 'Reka J - 17.04.2025' }
+      { src: 'milsim1.jpg', description: 'Lokacija: Poligon, Datum: 22.05.2024' },
+      { src: 'milsim2.jpg', description: 'Lokacija: Planina, Datum: 25.05.2024' }
     ],
-   
-};
+  };
 
-function openFolder(folderName) {
-    const galleryContainer = document.querySelector('.gallery-grid');
-    galleryContainer.innerHTML = ''; // očisti prethodne slike
-
-    const images = folderImages[folderName];
-    if (!images || images.length === 0) {
-        galleryContainer.innerHTML = '<p>Nema slika u ovom folderu.</p>';
-        return;
-    }
-
-    images.forEach(img => {
-        const imgContainer = document.createElement('div');
-        imgContainer.classList.add('image-item');
-
-        const imageEl = document.createElement('img');
-        imageEl.src = `assets/${img.src}`;
-        imageEl.alt = img.description;
-
-        const descriptionEl = document.createElement('p');
-        descriptionEl.textContent = img.description;
-        descriptionEl.classList.add('image-description');
-
-        imgContainer.appendChild(imageEl);
-        imgContainer.appendChild(descriptionEl);
-
-        galleryContainer.appendChild(imgContainer);
+  folders.forEach(folder => {
+    folder.addEventListener('click', () => {
+      const folderName = folder.getAttribute('data-folder');
+      openFolder(folderName);
     });
-}
+  });
+
+  backButton.addEventListener('click', () => {
+    galleryGrid.innerHTML = '';
+    document.querySelector('.folder-list').style.display = 'flex';
+    backButton.style.display = 'none';
+  });
+
+  function openFolder(folderName) {
+    const images = folderImages[folderName];
+    if (!images) return;
+
+    galleryGrid.innerHTML = '';
+    images.forEach(img => {
+      const imgDiv = document.createElement('div');
+      imgDiv.classList.add('image-item');
+
+      const imageEl = document.createElement('img');
+      imageEl.src = `assets/${img.src}`;
+      imageEl.alt = img.description;
+
+      const descEl = document.createElement('div');
+      descEl.classList.add('image-description');
+      descEl.textContent = img.description;
+
+      imgDiv.appendChild(imageEl);
+      imgDiv.appendChild(descEl);
+      galleryGrid.appendChild(imgDiv);
+    });
+
+    document.querySelector('.folder-list').style.display = 'none';
+    backButton.style.display = 'block';
+  }
+});
 
 
 
