@@ -406,8 +406,9 @@ button:hover {
 #lightbox .prev { left: 30px; }
 #lightbox .next { right: 30px; }
 
-.hidden { display: none; }
-
+#lightbox.hidden {
+  display: none;
+}
 
 
 
