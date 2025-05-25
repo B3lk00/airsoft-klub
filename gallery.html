@@ -8,20 +8,21 @@
 </head>
 <body>
 
-<section class="gallery container">
+<section id="gallery-section">
   <h2>Galerija</h2>
 
-  <!-- Folderi za kategorije -->
-  <div class="gallery-folders">
-    <div class="folder" onclick="showCategory('trening-gallery')">
-      <img src="assets/trening1.jpg" alt="Trening folder" />
-      <p>Slike sa Treninga</p>
+  <!-- Folderi -->
+  <div id="gallery-folders" class="gallery-folders">
+    <div class="folder" data-folder="trening">
+      <img src="assets/trening-folder.jpg" alt="Slike sa treninga">
+      <p>Slike sa treninga</p>
     </div>
-    <div class="folder" onclick="showCategory('milsim-gallery')">
-      <img src="assets/milsim1.jpg" alt="Milsim folder" />
+    <div class="folder" data-folder="milsim">
+      <img src="assets/milsim-folder.jpg" alt="Slike sa Milsim-a">
       <p>Slike sa Milsim-a</p>
     </div>
   </div>
+
 
   <!-- Galerije pojedinačnih kategorija (skriveno po defaultu) -->
   <div id="trening-gallery" class="hidden gallery-grid">
@@ -38,15 +39,19 @@
     <button onclick="hideCategory()">Nazad</button>
   </div>
 </section>
+
+    <!-- Galerija slika (po folderu) -->
+  <div id="folder-gallery" class="hidden">
+    <button id="back-to-folders">Nazad</button>
+    <div id="gallery-grid" class="gallery-grid"></div>
+  </div>
+</section>
+
   
 <!-- Lightbox -->
 <div id="lightbox" class="hidden">
-  <span class="close" id="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="" />
-  <div class="nav">
-    <span class="prev" id="lightbox-prev">&#10094;</span>
-    <span class="next" id="lightbox-next">&#10095;</span>
-  </div>
+  <span id="lightbox-close" class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
 </div>
 
 
