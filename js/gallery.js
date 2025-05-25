@@ -62,3 +62,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const folders = document.querySelectorAll('.folder');
+
+  const folderImages = {
+    trening: ['trening1.jpg', 'trening2.jpg', 'trening3.jpg'],
+    milsim: ['milsim1.jpg', 'milsim2.jpg', 'milsim3.jpg']
+    // dodaj ovde više ako imaš
+  };
+
+  folders.forEach(folder => {
+    const folderName = folder.getAttribute('data-folder');
+    const imageDiv = folder.querySelector('.folder-image');
+    const images = folderImages[folderName];
+
+    if (!images || images.length === 0) return;
+
+    // Postavi prvu sliku
+    let currentIndex = 0;
+    imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+
+    // Promijeni sliku svakih 3 sekunde
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+    }, 3000);
+  });
+});
+
