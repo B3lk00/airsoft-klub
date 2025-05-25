@@ -449,7 +449,7 @@ button:hover {
 }
 
 #images-container img {
-  width: 20%;         /* neka slika popuni celu grid ćeliju */
+  width: 25%;         /* neka slika popuni celu grid ćeliju */
   height: 40px;        /* visina se prilagođava širini */
   border-radius: 8px;
   cursor: pointer;
