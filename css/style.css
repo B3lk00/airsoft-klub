@@ -441,21 +441,7 @@ button:hover {
   background-color: #388e3c;
 }
 //---------------------//
-#images-container img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
 
-#images-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #7ac142;
-}
 //-------------------------------//
 
 
