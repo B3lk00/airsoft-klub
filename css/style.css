@@ -396,10 +396,10 @@ button:hover {
 }
 
 #lightbox img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #4caf50;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
+  box-shadow: 0 0 0px #4caf50;
 }
 
 
