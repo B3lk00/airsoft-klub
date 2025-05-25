@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageDiv = folder.querySelector('.folder-image');
     const images = folderImages[folderName];
 
-    if (!images || images.length === 0) return;
+    if (!imageDiv || !images || images.length === 0) return;
+
 
     // Postavi prvu sliku
     let currentIndex = 0;
