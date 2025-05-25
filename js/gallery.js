@@ -112,61 +112,6 @@ function backToHome() {
 
 
 //----------------------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', function() {
-  const folders = document.querySelectorAll('.folder');
-  const galleryGrid = document.querySelector('.gallery-grid');
-  const backButton = document.getElementById('backButton');
-
-  const folderImages = {
-    trening: [
-      { src: 'trening1.jpg', description: 'Lokacija: Park, Datum: 12.05.2024' },
-      { src: 'trening2.jpg', description: 'Lokacija: Šuma, Datum: 18.05.2024' }
-    ],
-    milsim: [
-      { src: 'milsim1.jpg', description: 'Lokacija: Poligon, Datum: 22.05.2024' },
-      { src: 'milsim2.jpg', description: 'Lokacija: Planina, Datum: 25.05.2024' }
-    ],
-  };
-
-  folders.forEach(folder => {
-    folder.addEventListener('click', () => {
-      const folderName = folder.getAttribute('data-folder');
-      openFolder(folderName);
-    });
-  });
-
-  backButton.addEventListener('click', () => {
-    galleryGrid.innerHTML = '';
-    document.querySelector('.folder-list').style.display = 'flex';
-    backButton.style.display = 'none';
-  });
-
-  function openFolder(folderName) {
-    const images = folderImages[folderName];
-    if (!images) return;
-
-    galleryGrid.innerHTML = '';
-    images.forEach(img => {
-      const imgDiv = document.createElement('div');
-      imgDiv.classList.add('image-item');
-
-      const imageEl = document.createElement('img');
-      imageEl.src = `assets/${img.src}`;
-      imageEl.alt = img.description;
-
-      const descEl = document.createElement('div');
-      descEl.classList.add('image-description');
-      descEl.textContent = img.description;
-
-      imgDiv.appendChild(imageEl);
-      imgDiv.appendChild(descEl);
-      galleryGrid.appendChild(imgDiv);
-    });
-
-    document.querySelector('.folder-list').style.display = 'none';
-    backButton.style.display = 'block';
-  }
-});
 
 
 
