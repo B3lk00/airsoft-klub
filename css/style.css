@@ -381,10 +381,13 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  pointer-events: auto; /* dozvoli klikove kada je vidljiv */
 }
 
 #lightbox.hidden {
   display: none;
+  pointer-events: none; /* onemogući klikove kad je skriven */
 }
 
 #lightbox-img {
@@ -429,7 +432,6 @@ button:hover {
 #lightbox .next {
   right: 15px;
 }
-
 
 
 
