@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const folders = document.querySelectorAll('.folder');
 
@@ -89,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
       imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
     }, 3000);
   });
-});
+
+
 
 
 // Funkcija koja vodi na početnu stranicu
@@ -97,12 +100,13 @@ function backToHome() {
     window.location.href = "index.html"; // ili "/" ako koristiš root
 }
 
-// Povezivanje dugmeta s funkcijom
-document.addEventListener('DOMContentLoaded', function() {
-    const backBtn = document.getElementById('back-to-home');
-    if (backBtn) {
-        backBtn.addEventListener('click', backToHome);
-    }
+ // ====== OVO DODAJEMO ZA BACK DUGME ======
+  const backBtn = document.getElementById('back-to-home');
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      window.location.href = 'index.html';  // promeni ako trebaš na root "/"
+    });
+  }
 });
 
 
