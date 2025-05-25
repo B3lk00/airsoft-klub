@@ -90,3 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
 });
+
+ // Dugme nazad na početnu stranicu
+  backToHome.addEventListener('click', () => {
+    window.location.href = 'index.html';  // ili '/' ako si na root domeni
+  });
+
