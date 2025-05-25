@@ -344,7 +344,7 @@ h2 {
 }
 
 .gallery-grid img {
-  width: 50%;
+  width: 100%;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
