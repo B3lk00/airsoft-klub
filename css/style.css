@@ -450,7 +450,7 @@ button:hover {
 
 #images-container img {
   width: 45%;         /* neka slika popuni celu grid ćeliju */
-  height: auto;        /* visina se prilagođava širini */
+  height: 50px;        /* visina se prilagođava širini */
   border-radius: 8px;
   cursor: pointer;
   object-fit: cover;
