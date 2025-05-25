@@ -11,18 +11,17 @@
 <section id="gallery-section">
   <h2>Galerija</h2>
 
-  <!-- Folderi -->
-  <div id="gallery-folders" class="gallery-folders">
-    <div class="folder" data-folder="trening">
-      <img src="assets/trening-folder.jpg" alt="Slike sa treninga">
-      <p>Slike sa treninga</p>
-    </div>
-    <div class="folder" data-folder="milsim">
-      <img src="assets/milsim-folder.jpg" alt="Slike sa Milsim-a">
-      <p>Slike sa Milsim-a</p>
-    </div>
+<!-- FOLDERI -->
+<div class="gallery-folders">
+  <div class="folder" data-folder="trening">
+    <img src="assets/trening-folder.jpg" alt="Trening Folder">
+    <p>Slike sa treninga</p>
   </div>
-
+  <div class="folder" data-folder="milsim">
+    <img src="assets/milsim-folder.jpg" alt="Milsim Folder">
+    <p>Slike sa Milsim-a</p>
+  </div>
+</div>
 
   <!-- Galerije pojedinačnih kategorija (skriveno po defaultu) -->
   <div id="trening-gallery" class="hidden gallery-grid">
@@ -40,7 +39,13 @@
   </div>
 </section>
 
-
+<!-- GALERIJA SLIKA PO FOLDERU -->
+<div id="folder-images" class="hidden">
+  <button id="back-button">Nazad</button>
+  <div class="gallery-grid" id="images-container">
+    <!-- Ovdje se dinamički pune slike JS-om -->
+  </div>
+</div>
   
 
   <div class="gallery-grid">
