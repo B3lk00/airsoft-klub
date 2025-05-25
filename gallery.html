@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Galerija</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/gallery.js" defer></script>
 </head>
 <body>
 
 <section class="gallery container">
   <h2>Galerija</h2>
-  <div class="gallery-grid">
-    <img src="assets/trening1.jpg" alt="Trening 1" class="gallery-img" data-index="0">
-    <img src="assets/trening2.jpg" alt="Trening 2" class="gallery-img" data-index="1">
-    <img src="assets/milsim1.jpg" alt="Milsim 1" class="gallery-img" data-index="2">
-    <img src="assets/milsim2.jpg" alt="Milsim 2" class="gallery-img" data-index="3">
+
+  <!-- Folderi za kategorije -->
+  <div class="gallery-folders">
+    <div class="folder" onclick="showCategory('trening-gallery')">
+      <img src="assets/trening1.jpg" alt="Trening folder" />
+      <p>Slike sa Treninga</p>
+    </div>
+    <div class="folder" onclick="showCategory('milsim-gallery')">
+      <img src="assets/milsim1.jpg" alt="Milsim folder" />
+      <p>Slike sa Milsim-a</p>
+    </div>
+  </div>
+
+  <!-- Galerije pojedinačnih kategorija (skriveno po defaultu) -->
+  <div id="trening-gallery" class="hidden gallery-grid">
+    <h3>Slike sa Treninga</h3>
+    <img src="assets/trening1.jpg" alt="Trening 1" class="gallery-img" data-index="0" />
+    <img src="assets/trening2.jpg" alt="Trening 2" class="gallery-img" data-index="1" />
+    <button onclick="hideCategory()">Nazad</button>
+  </div>
+
+  <div id="milsim-gallery" class="hidden gallery-grid">
+    <h3>Slike sa Milsim-a</h3>
+    <img src="assets/milsim1.jpg" alt="Milsim 1" class="gallery-img" data-index="2" />
+    <img src="assets/milsim2.jpg" alt="Milsim 2" class="gallery-img" data-index="3" />
+    <button onclick="hideCategory()">Nazad</button>
   </div>
 </section>
 
-    <div id="trening-gallery" class="hidden">
-      <h3>Slike sa Treninga</h3>
-      <div class="gallery-grid">
-        <img src="assets/trening1.jpg" alt="Trening 1">
-        <img src="assets/trening2.jpg" alt="Trening 2">
-        <!-- Dodaj još slika -->
-      </div>
-      <button onclick="hideCategory()">Nazad</button>
-    </div>
-
-    <div id="milsim-gallery" class="hidden">
-      <h3>Slike sa Milsim-a</h3>
-      <div class="gallery-grid">
-        <img src="assets/milsim1.jpg" alt="Milsim 1">
-        <img src="assets/milsim2.jpg" alt="Milsim 2">
-        <!-- Dodaj još slika -->
-      </div>
-      <button onclick="hideCategory()">Nazad</button>
-    </div>
-  </section>
-
-  <!-- Lightbox -->
+<!-- Lightbox -->
 <div id="lightbox" class="hidden">
   <span class="close" id="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
+  <img id="lightbox-img" src="" alt="" />
   <div class="nav">
     <span class="prev" id="lightbox-prev">&#10094;</span>
     <span class="next" id="lightbox-next">&#10095;</span>
   </div>
 </div>
 
- <script src="js/gallery.js" defer></script>
 </body>
 </html>
