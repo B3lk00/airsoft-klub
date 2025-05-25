@@ -442,4 +442,26 @@ button:hover {
 }
 //---------------------//
 
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.05);
+}
+
+.image-description {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+//-------------------------------//
+
 
