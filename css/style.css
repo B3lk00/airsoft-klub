@@ -443,14 +443,14 @@ button:hover {
 //---------------------//
 #images-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   margin-bottom: 2rem;
 }
 
 #images-container img {
   width: 20%;         /* neka slika popuni celu grid ćeliju */
-  height: 220px;       /* visina se prilagođava širini */
+  height: 240px;       /* visina se prilagođava širini */
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
