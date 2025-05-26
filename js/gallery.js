@@ -151,6 +151,7 @@ document.addEventListener('click', (e) => {
         if (currentIndex !== -1) {
             lightboxImage.src = galleryImages[currentIndex].src;
             lightbox.classList.remove('hidden');
+           updateLightboxContent(currentIndex);  // <-- OVDE POZIVAŠ FUNKCIJU!
         }
     }
 });
@@ -167,6 +168,7 @@ prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
     if (galleryImages[currentIndex]) {
         lightboxImage.src = galleryImages[currentIndex].src;
+      updateLightboxContent(currentIndex);  // dodaj ovo
     }
 });
 
@@ -177,6 +179,7 @@ nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % galleryImages.length;
     if (galleryImages[currentIndex]) {
         lightboxImage.src = galleryImages[currentIndex].src;
+       updateLightboxContent(currentIndex);  // dodaj ovo
     }
 });
 
