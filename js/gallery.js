@@ -112,39 +112,56 @@ function backToHome() {
 
 
 //----------------------------------------------------------------------------------------
+let galleryImages = document.querySelectorAll('#images-container img');
 const lightbox = document.getElementById('simple-lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
-const closeBtn = document.getElementById('lightbox-close');
+const lightboxClose = document.getElementById('lightbox-close');
 const prevBtn = document.getElementById('lightbox-prev');
 const nextBtn = document.getElementById('lightbox-next');
-const galleryImages = document.querySelectorAll('#images-container img');
 
 let currentIndex = 0;
 
-// Otvori lightbox
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        lightbox.classList.remove('hidden');
-        lightboxImage.src = img.src;
-        currentIndex = index;
-    });
+// Funkcija za ažuriranje liste slika
+function updateGalleryImages() {
+    galleryImages = document.querySelectorAll('#images-container img');
+}
+
+// Otvori lightbox kada klikneš na sliku
+document.addEventListener('click', (e) => {
+    if (e.target.closest('#images-container img')) {
+        updateGalleryImages();
+        const clickedImage = e.target;
+        currentIndex = Array.from(galleryImages).indexOf(clickedImage);
+        if (currentIndex !== -1) {
+            lightboxImage.src = galleryImages[currentIndex].src;
+            lightbox.classList.remove('hidden');
+        }
+    }
 });
 
 // Zatvori lightbox
-closeBtn.addEventListener('click', () => {
+lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
 });
 
 // Prethodna slika
 prevBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    lightboxImage.src = galleryImages[currentIndex].src;
+    if (galleryImages[currentIndex]) {
+        lightboxImage.src = galleryImages[currentIndex].src;
+    }
 });
 
 // Sledeća slika
 nextBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+
     currentIndex = (currentIndex + 1) % galleryImages.length;
-    lightboxImage.src = galleryImages[currentIndex].src;
+    if (galleryImages[currentIndex]) {
+        lightboxImage.src = galleryImages[currentIndex].src;
+    }
 });
 
 //----------------------------------------------------------------------------------------
