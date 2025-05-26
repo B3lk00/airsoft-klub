@@ -106,10 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const date = img.getAttribute('data-date') || 'Nepoznat datum';
 
     lightboxCaption.innerHTML = `
-      <div style="margin-top: 10px; text-align: center; color: #fff;">
-        <strong>📍 Lokacija:</strong> ${location} <br>
-        <strong>🗓️ Datum:</strong> <em>${date}</em>
-      </div>
+        <p class="caption-line" data-icon="📍">
+            <strong>Lokacija:</strong> ${location}
+        </p>
+        <p class="caption-line" data-icon="🗓️">
+            <strong>Datum:</strong> <em>${date}</em>
+        </p>
     `;
 }
 
