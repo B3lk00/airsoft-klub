@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const imagesData = {
     trening: ['assets/trening1.jpg', 'assets/trening2.jpg', 'assets/trening3.jpg'],
-    milsim: ['assets/milsim1.jpg', 'assets/milsim2.jpg', 'assets/milsim3.jpg' 'assets/milsim3.jpg'],
+    milsim: ['assets/milsim1.jpg', 'assets/milsim2.jpg', 'assets/milsim3.jpg'],
   }; 
 
   folders.forEach(folder => {
