@@ -9,10 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxClose = document.getElementById('lightbox-close');
 
   const imagesData = {
-    trening: ['assets/trening1.jpg', 'assets/trening2.jpg', 'assets/trening3.jpg'],
-    milsim: ['assets/milsim1.jpg', 'assets/milsim2.jpg', 'assets/milsim3.jpg'],
-  }; 
-
+    trening: [
+        { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-01' },
+        { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-05' },
+        { src: 'assets/trening3.jpg', location: 'Zenica', date: '2024-05-10' },
+        { src: 'assets/trening4.jpg', location: 'Banja Luka', date: '2024-05-15' } // NOVO!
+    ],
+    milsim: [
+        { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01' },
+        { src: 'assets/milsim2.jpg', location: 'Sarajevo', date: '2024-06-05' },
+        { src: 'assets/milsim3.jpg', location: 'Mostar', date: '2024-06-10' },
+        { src: 'assets/milsim4.jpg', location: 'Doboj', date: '2024-06-15' } // NOVO!
+    ]
+};
+  
   folders.forEach(folder => {
     folder.addEventListener('click', () => {
       const folderName = folder.getAttribute('data-folder');
@@ -22,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
       images.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
+        img.setAttribute('data-location', image.location);
+        img.setAttribute('data-date', image.date);
         img.classList.add('lightbox-trigger');
         imagesContainer.appendChild(img);
       });
