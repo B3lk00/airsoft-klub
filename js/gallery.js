@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
     milsim: ['assets/milsim1.jpg', 'assets/milsim2.jpg', 'assets/milsim3.jpg']
   };
 
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+function updateLightboxContent(index) {
+    const img = galleryImages[index];
+    if (!img) return;
+
+    lightboxImage.src = img.src;
+
+    const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
+    const date = img.getAttribute('data-date') || 'Nepoznat datum';
+
+    lightboxCaption.textContent = `Lokacija: ${location} | Datum: ${date}`;
+}
+
+  
+
   folders.forEach(folder => {
     folder.addEventListener('click', () => {
       const folderName = folder.getAttribute('data-folder');
