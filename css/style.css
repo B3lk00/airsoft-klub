@@ -449,11 +449,11 @@ button:hover {
 }
 
 #images-container img {
-  width: 25%;         /* neka slika popuni celu grid ćeliju */
-  height: 40px;        /* visina se prilagođava širini */
+  width: 100%;         /* neka slika popuni celu grid ćeliju */
+  height: 110px;       /* visina se prilagođava širini */
+  object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
