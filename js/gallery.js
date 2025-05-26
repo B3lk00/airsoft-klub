@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const images = imagesData[folderName];
 
       imagesContainer.innerHTML = '';
-      images.forEach(src => {
+      images.forEach(image => {
         const img = document.createElement('img');
         img.src = src;
         img.setAttribute('data-location', image.location);
