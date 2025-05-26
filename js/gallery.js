@@ -7,22 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('simple-lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxClose = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  let currentIndex = 0;
+  let galleryImages = [];
 
   const imagesData = {
     trening: [
-        { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-01' },
-        { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-05' },
-        { src: 'assets/trening3.jpg', location: 'Zenica', date: '2024-05-10' },
-        { src: 'assets/trening4.jpg', location: 'Banja Luka', date: '2024-05-15' } // NOVO!
+      { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-10' },
+      { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-12' },
+      { src: 'assets/trening3.jpg', location: 'Banja Luka', date: '2024-05-15' }
     ],
     milsim: [
-        { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01' },
-        { src: 'assets/milsim2.jpg', location: 'Sarajevo', date: '2024-06-05' },
-        { src: 'assets/milsim3.jpg', location: 'Mostar', date: '2024-06-10' },
-        { src: 'assets/milsim4.jpg', location: 'Doboj', date: '2024-06-15' } // NOVO!
+      { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01' },
+      { src: 'assets/milsim2.jpg', location: 'Zenica', date: '2024-06-05' },
+      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08' }
     ]
-};
-  
+  };
+
   folders.forEach(folder => {
     folder.addEventListener('click', () => {
       const folderName = folder.getAttribute('data-folder');
@@ -31,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imagesContainer.innerHTML = '';
       images.forEach(image => {
         const img = document.createElement('img');
-        img.src = src;
+        img.src = image.src;
         img.setAttribute('data-location', image.location);
         img.setAttribute('data-date', image.date);
         img.classList.add('lightbox-trigger');
@@ -39,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       folderImages.classList.remove('hidden');
+
+      // Update galleryImages list
+      galleryImages = document.querySelectorAll('#images-container img');
     });
   });
 
@@ -47,98 +54,48 @@ document.addEventListener('DOMContentLoaded', () => {
     imagesContainer.innerHTML = '';
   });
 
-  // Lightbox setup
+  // Lightbox open
   imagesContainer.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG') {
-      lightboxImage.src = e.target.src;
+      currentIndex = Array.from(galleryImages).indexOf(e.target);
+      updateLightboxContent(currentIndex);
       lightbox.classList.remove('hidden');
     }
   });
 
+  // Lightbox close
   lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
-    lightboxImage.src = '';
   });
 
+  // Previous image
+  prevBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightboxContent(currentIndex);
+  });
+
+  // Next image
+  nextBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateLightboxContent(currentIndex);
+  });
+
+  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
       lightbox.classList.add('hidden');
-      lightboxImage.src = '';
     }
   });
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.add('hidden');
-      lightboxImage.src = '';
     }
   });
-});
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const folders = document.querySelectorAll('.folder');
-
-  const folderImages = {
-    trening: ['trening1.jpg', 'trening2.jpg', 'trening3.jpg'],
-    milsim: ['milsim1.jpg', 'milsim2.jpg', 'milsim3.jpg']
-    // dodaj ovde više ako imaš
-  };
-
-  folders.forEach(folder => {
-    const folderName = folder.getAttribute('data-folder');
-    const imageDiv = folder.querySelector('.folder-image');
-    const images = folderImages[folderName];
-
-    if (!imageDiv || !images || images.length === 0) return;
-
-
-    // Postavi prvu sliku
-    let currentIndex = 0;
-    imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
-
-    // Promijeni sliku svakih 3 sekunde
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
-    }, 3000);
-  });
-
-
-
-
-// Funkcija koja vodi na početnu stranicu
-function backToHome() {
-    window.location.href = "index.html"; // ili "/" ako koristiš root
-}
-
- // ====== OVO DODAJEMO ZA BACK DUGME ======
-  const backBtn = document.getElementById('back-to-home');
-  if (backBtn) {
-    backBtn.addEventListener('click', function() {
-      window.location.href = 'index.html';  // promeni ako trebaš na root "/"
-    });
-  }
-});
-
-
-//----------------------------------------------------------------------------------------
-let galleryImages = document.querySelectorAll('#images-container img');
-const lightbox = document.getElementById('simple-lightbox');
-const lightboxImage = document.getElementById('lightbox-image');
-const lightboxClose = document.getElementById('lightbox-close');
-const prevBtn = document.getElementById('lightbox-prev');
-const nextBtn = document.getElementById('lightbox-next');
-const lightboxCaption = document.getElementById('lightbox-caption');
-
-let currentIndex = 0;
-
-// Funkcija za ažuriranje liste slika
-function updateGalleryImages() {
-    galleryImages = document.querySelectorAll('#images-container img');
-}
-function updateLightboxContent(index) {
+  function updateLightboxContent(index) {
     const img = galleryImages[index];
     if (!img) return;
 
@@ -148,52 +105,35 @@ function updateLightboxContent(index) {
     const date = img.getAttribute('data-date') || 'Nepoznat datum';
 
     lightboxCaption.textContent = `Lokacija: ${location} | Datum: ${date}`;
-}
+  }
 
+  // Folder preview slideshow
+  const folderImagesPreview = {
+    trening: ['trening1.jpg', 'trening2.jpg', 'trening3.jpg'],
+    milsim: ['milsim1.jpg', 'milsim2.jpg', 'milsim3.jpg']
+  };
 
-// Otvori lightbox kada klikneš na sliku
-document.addEventListener('click', (e) => {
-    if (e.target.closest('#images-container img')) {
-        updateGalleryImages();
-        const clickedImage = e.target;
-        currentIndex = Array.from(galleryImages).indexOf(clickedImage);
-        if (currentIndex !== -1) {
-            lightboxImage.src = galleryImages[currentIndex].src;
-            lightbox.classList.remove('hidden');
-           updateLightboxContent(currentIndex);  // <-- OVDE POZIVAŠ FUNKCIJU!
-        }
-    }
+  folders.forEach(folder => {
+    const folderName = folder.getAttribute('data-folder');
+    const imageDiv = folder.querySelector('.folder-image');
+    const images = folderImagesPreview[folderName];
+
+    if (!imageDiv || !images || images.length === 0) return;
+
+    let currentIndex = 0;
+    imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+    }, 3000);
+  });
+
+  // Back to home button
+  const backBtn = document.getElementById('back-to-home');
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      window.location.href = 'index.html';
+    });
+  }
 });
-
-// Zatvori lightbox
-lightboxClose.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-});
-
-// Prethodna slika
-prevBtn.addEventListener('click', () => {
-    if (galleryImages.length === 0) return;
-
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    if (galleryImages[currentIndex]) {
-        lightboxImage.src = galleryImages[currentIndex].src;
-      updateLightboxContent(currentIndex);  // dodaj ovo
-    }
-});
-
-// Sledeća slika
-nextBtn.addEventListener('click', () => {
-    if (galleryImages.length === 0) return;
-
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    if (galleryImages[currentIndex]) {
-        lightboxImage.src = galleryImages[currentIndex].src;
-       updateLightboxContent(currentIndex);  // dodaj ovo
-    }
-});
-
-//----------------------------------------------------------------------------------------
-
-
-
-
