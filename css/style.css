@@ -463,5 +463,44 @@ button:hover {
 
 
 //-------------------------------//
+#simple-lightbox {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#simple-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#lightbox-prev, #lightbox-next {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+#lightbox-prev { left: 30px; }
+#lightbox-next { right: 30px; }
+
+//------------------------------//
 
 
