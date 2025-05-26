@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01' },
       { src: 'assets/milsim2.jpg', location: 'Zenica', date: '2024-06-05' },
       { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08' },
-      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08' }
+      { src: 'assets/milsim4.jpg', location: 'Sanski Most', date: '2024-06-08' }
     ]
   };
 
