@@ -11,23 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const imagesData = {
     trening: ['assets/trening1.jpg', 'assets/trening2.jpg', 'assets/trening3.jpg'],
     milsim: ['assets/milsim1.jpg', 'assets/milsim2.jpg', 'assets/milsim3.jpg']
-  };
-
-  const lightboxCaption = document.getElementById('lightbox-caption');
-
-function updateLightboxContent(index) {
-    const img = galleryImages[index];
-    if (!img) return;
-
-    lightboxImage.src = img.src;
-
-    const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
-    const date = img.getAttribute('data-date') || 'Nepoznat datum';
-
-    lightboxCaption.textContent = `Lokacija: ${location} | Datum: ${date}`;
-}
-
-  
+  }; 
 
   folders.forEach(folder => {
     folder.addEventListener('click', () => {
@@ -134,6 +118,7 @@ const lightboxImage = document.getElementById('lightbox-image');
 const lightboxClose = document.getElementById('lightbox-close');
 const prevBtn = document.getElementById('lightbox-prev');
 const nextBtn = document.getElementById('lightbox-next');
+const lightboxCaption = document.getElementById('lightbox-caption');
 
 let currentIndex = 0;
 
@@ -141,6 +126,18 @@ let currentIndex = 0;
 function updateGalleryImages() {
     galleryImages = document.querySelectorAll('#images-container img');
 }
+function updateLightboxContent(index) {
+    const img = galleryImages[index];
+    if (!img) return;
+
+    lightboxImage.src = img.src;
+
+    const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
+    const date = img.getAttribute('data-date') || 'Nepoznat datum';
+
+    lightboxCaption.textContent = `Lokacija: ${location} | Datum: ${date}`;
+}
+
 
 // Otvori lightbox kada klikneš na sliku
 document.addEventListener('click', (e) => {
