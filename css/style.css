@@ -487,19 +487,30 @@ button:hover {
     cursor: pointer;
 }
 
-#lightbox-prev, #lightbox-next {
+.lightbox-arrow {
     position: absolute;
     top: 50%;
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     cursor: pointer;
     user-select: none;
-    padding: 10px;
     transform: translateY(-50%);
+    padding: 10px;
+    transition: transform 0.2s;
 }
 
-#lightbox-prev { left: 30px; }
-#lightbox-next { right: 30px; }
+#lightbox-prev {
+    left: 30px;
+}
+
+#lightbox-next {
+    right: 30px;
+}
+
+.lightbox-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
 
 //------------------------------//
 
