@@ -105,8 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
     const date = img.getAttribute('data-date') || 'Nepoznat datum';
 
-    lightboxCaption.textContent = `Lokacija: ${location} | Datum: ${date}`;
-  }
+    lightboxCaption.innerHTML = `
+      <div style="margin-top: 10px; text-align: center; color: #fff;">
+        <strong>📍 Lokacija:</strong> ${location} <br>
+        <strong>🗓️ Datum:</strong> <em>${date}</em>
+      </div>
+    `;
+}
+
 
   // Folder preview slideshow
   const folderImagesPreview = {
