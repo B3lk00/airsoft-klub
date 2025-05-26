@@ -112,6 +112,42 @@ function backToHome() {
 
 
 //----------------------------------------------------------------------------------------
+const lightbox = document.getElementById('simple-lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const closeBtn = document.getElementById('lightbox-close');
+const prevBtn = document.getElementById('lightbox-prev');
+const nextBtn = document.getElementById('lightbox-next');
+const galleryImages = document.querySelectorAll('#images-container img');
+
+let currentIndex = 0;
+
+// Otvori lightbox
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        lightbox.classList.remove('hidden');
+        lightboxImage.src = img.src;
+        currentIndex = index;
+    });
+});
+
+// Zatvori lightbox
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+});
+
+// Prethodna slika
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    lightboxImage.src = galleryImages[currentIndex].src;
+});
+
+// Sledeća slika
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    lightboxImage.src = galleryImages[currentIndex].src;
+});
+
+//----------------------------------------------------------------------------------------
 
 
 
