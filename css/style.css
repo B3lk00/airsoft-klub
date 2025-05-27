@@ -686,27 +686,17 @@ img {
     height: auto;
 }
 
+/* Samo na mobilnim */
 @media (max-width: 768px) {
-    #simple-lightbox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #lightbox-image {
-        max-width: 100%;
-        height: auto;
-    }
-
     #lightbox-caption {
-        position: static;  /* maknemo absolute */
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         background: rgba(0, 0, 0, 0.85);
         padding: 10px;
         border-radius: 10px;
-        margin-top: 10px;
         max-width: 90%;
-        text-align: center;
     }
 }
 //---------------------------//
