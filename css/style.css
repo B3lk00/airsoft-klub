@@ -692,7 +692,7 @@ img {
 @media (max-width: 768px) {
     #lightbox-caption {
         position: absolute;
-        bottom: 20px;
+        bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(0, 0, 0, 0.85);
