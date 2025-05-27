@@ -580,5 +580,46 @@ button:hover {
     content: attr(data-icon);
     margin-right: 8px;
 }
+//-------------nesto za footer---------------//
+/* Osnovni layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ovaj wrapper raste da popuni prostor */
+.page-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sekcija galerije raste */
+#gallery-section {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Footer ostaje na dnu */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
 //----------------------------//
 
