@@ -689,4 +689,24 @@ img {
     text-align: center;
 }
 //--------------------------//
+@media (max-width: 600px) {
+    #simple-lightbox {
+        width: 100%;
+    }
+
+    #lightbox-image {
+        width: 100%;
+        height: auto;
+    }
+
+    #lightbox-caption {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .lightbox-arrow {
+        font-size: 24px;
+    }
+}
+//---------------------------//
 
