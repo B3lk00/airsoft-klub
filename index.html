@@ -76,12 +76,15 @@
     
     <script src="js/script.js"></script>
 
-      <script>
-function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    nav.classList.toggle('show');
+    function toggleMenu() {
+    const menu = document.querySelector('.mobile-menu');
+    if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'flex';
+    }
 }
-</script>
+
     
 </body>
 </html>
