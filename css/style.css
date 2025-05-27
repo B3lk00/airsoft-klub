@@ -696,6 +696,49 @@ img {
     }
 }
 //--------------------------//
+/* Sakrij hamburger na desktopu */
+.hamburger-menu {
+    display: none;
+}
 
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+        position: relative;
+    }
+
+    .hamburger {
+        font-size: 28px;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        right: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .mobile-nav a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .mobile-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+}
 //---------------------------//
 
