@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-<script>
+
 function toggleMenu() {
     const menu = document.querySelector('.mobile-menu');
     if (menu.style.display === 'flex') {
@@ -34,6 +34,6 @@ function toggleMenu() {
         menu.style.display = 'flex';
     }
 }
-</script>
+
 
 
