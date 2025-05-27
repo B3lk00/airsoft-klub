@@ -581,43 +581,37 @@ button:hover {
     margin-right: 8px;
 }
 //-------------nesto za footer---------------//
-/* Osnovni layout */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+/* Default stilovi (ostale stranice) */
+body {
+  display: block;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.page-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-#gallery-section {
-    flex: 1;
-    padding: 20px;
-}
-
-/* Footer styling */
 footer {
-    background-color: #222;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
 }
 
-footer .social-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
+/* Samo za galerija stranicu - footer na dnu */
+body.gallery-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* cijela visina prozora */
+  margin: 0;
 }
 
-footer .social-links a:hover {
-    text-decoration: underline;
+body.gallery-page #gallery-section {
+  flex: 1; /* raste i zauzima sav raspoloživi prostor */
+  padding: 20px;
+}
+
+body.gallery-page footer {
+  margin-top: auto; /* guranje footera na dno */
 }
 //----------------------------//
 
