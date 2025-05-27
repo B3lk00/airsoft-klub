@@ -99,32 +99,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  function updateLightboxContent(index) {
-    const img = galleryImages[index];
-    if (!img) return;
+ function updateLightboxContent(index) {
+    const imgElement = galleryImages[index];
+    const folderName = imgElement.getAttribute('data-folder');
+    const imgData = imagesData[folderName][index];
 
-    lightboxImage.src = img.src;
-
-    const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
-    const date = img.getAttribute('data-date') || 'Nepoznat datum';
-    const club = img.getAttribute('data-club') || 'Nepoznat klub';
-    const event = img.getAttribute('data-event') || 'Nepoznat event';
-
-    lightboxCaption.innerHTML = `
-        <div style="margin: 4px 0;">
-            📍 <b>Lokacija:</b> ${location}
+    let captionHTML = `
+        <div class="caption-row">
+            <span class="caption-icon">📍</span>
+            <span><b>Lokacija:</b> ${imgData.location || 'Nepoznata'}</span>
         </div>
-        <div style="margin: 4px 0;">
-            📅 <b>Datum:</b> <i>${date}</i>
-        </div>
-        <div style="margin: 4px 0;">
-            🏰 <b>Klub:</b> ${club}
-        </div>
-        <div style="margin: 4px 0;">
-            🎖️ <b>Event:</b> ${event}
+        <div class="caption-row">
+            <span class="caption-icon">📅</span>
+            <span><b>Datum:</b> <i>${imgData.date || 'Nepoznat'}</i></span>
         </div>
     `;
+
+    if (folderName === 'milsim') {
+        captionHTML += `
+            <div class="caption-row">
+                <span class="caption-icon">🏰</span>
+                <span><b>Klub:</b> ${imgData.club || 'Nepoznat'}</span>
+            </div>
+            <div class="caption-row">
+                <span class="caption-icon">🎖️</span>
+                <span><b>Event:</b> ${imgData.event || 'Nepoznat'}</span>
+            </div>
+        `;
+    }
+
+    lightboxCaption.innerHTML = captionHTML;
 }
+
+
 
 
 
