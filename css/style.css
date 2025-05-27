@@ -660,4 +660,18 @@ img {
   }
 }
 //---------------------------//
+#gallery-logo {
+  display: block;
+  margin: 0 auto 20px auto; /* centriraj i daj razmak ispod */
+  max-width: 200px; /* prilagodi veličinu loga */
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  #gallery-logo {
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
+}
+//--------------------------//
 
