@@ -745,4 +745,25 @@ img {
     }
 }
 //---------------------------//
+#lightbox-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+}
 
+.caption-row {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+}
+
+.caption-icon {
+    width: 20px; /* fiksna širina za ikonicu */
+    text-align: center;
+    margin-right: 5px;
+}
+//-------------------------//
