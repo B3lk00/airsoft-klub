@@ -546,6 +546,23 @@ button:hover {
     content: attr(data-icon);
     margin-right: 8px;
 }
-//-----------------------------//
+//---------------razmak izmedu slike i teksta --------------//
+#simple-lightbox {
+    display: flex;
+    flex-direction: column; /* složi elemente VERTIKALNO */
+    align-items: center;
+    justify-content: center;
+}
 
+#lightbox-image {
+    max-width: 90%;
+    max-height: 80vh;
+    margin-bottom: 10px; /* mali razmak između slike i teksta */
+}
+
+#lightbox-caption {
+    width: 100%;
+    text-align: center;
+}
+//----------------------------//
 
