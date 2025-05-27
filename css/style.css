@@ -701,7 +701,7 @@ img {
     color: #fff;
     text-align: center;
     word-wrap: break-word;
-    background: rgba(0, 0, 0, 0.6); /* tamna poluprozirna pozadina */
+    background: rgba(0, 0, 0, 0.85); /* tamna poluprozirna pozadina */
     padding: 10px;
     border-radius: 10px;
     max-width: 90%;
