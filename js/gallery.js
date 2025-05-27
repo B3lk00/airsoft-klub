@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const imagesData = {
     trening: [
-      { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-10' },
-      { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-12' },
-      { src: 'assets/trening3.jpg', location: 'Banja Luka', date: '2024-05-15' }
+      { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-10', club: 'AK Kojot' },
+      { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-12', club: 'AK Kojot' },
+      { src: 'assets/trening3.jpg', location: 'Banja Luka', date: '2024-05-15', club: 'AK Kojot' }
     ],
     milsim: [
-      { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01' },
-      { src: 'assets/milsim2.jpg', location: 'Zenica', date: '2024-06-05' },
-      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08' },
-      { src: 'assets/milsim4.jpg', location: 'Sanski Most', date: '2024-06-08' }
+      { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01', club: 'AK Vukovi', event: 'Operacija Sjenka' },
+      { src: 'assets/milsim2.jpg', location: 'Zenica', date: '2024-06-05', club: 'AK Vukovi', event: 'Operacija Sjenka' },
+      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08', club: 'AK Vukovi', event: 'Operacija Sjenka' },
+      { src: 'assets/milsim4.jpg', location: 'Sanski Most', date: '2024-06-08', club: 'AK Vukovi', event: 'Operacija Sjenka' }
     ]
   };
 
@@ -35,13 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       imagesContainer.innerHTML = '';
       images.forEach(image => {
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.setAttribute('data-location', image.location);
-        img.setAttribute('data-date', image.date);
-        img.classList.add('lightbox-trigger');
-        imagesContainer.appendChild(img);
-      });
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.classList.add('lightbox-trigger');
+    img.setAttribute('data-location', image.location);
+    img.setAttribute('data-date', image.date);
+    img.setAttribute('data-club', image.club);
+    img.setAttribute('data-event', image.event);
+    imagesContainer.appendChild(img);
+});
+
 
       folderImages.classList.remove('hidden');
 
@@ -104,16 +107,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const location = img.getAttribute('data-location') || 'Nepoznata lokacija';
     const date = img.getAttribute('data-date') || 'Nepoznat datum';
+    const club = img.getAttribute('data-club') || 'Nepoznat klub';
+    const event = img.getAttribute('data-event') || 'Nepoznat event';
 
     lightboxCaption.innerHTML = `
-        <p class="caption-line" data-icon="📍">
-            <strong>Lokacija:</strong> ${location}
-        </p>
-        <p class="caption-line" data-icon="🗓️">
-            <strong>Datum:</strong> <em>${date}</em>
-        </p>
+        <div style="margin: 4px 0;">
+            📍 <b>Lokacija:</b> ${location}
+        </div>
+        <div style="margin: 4px 0;">
+            📅 <b>Datum:</b> <i>${date}</i>
+        </div>
+        <div style="margin: 4px 0;">
+            🏰 <b>Klub:</b> ${club}
+        </div>
+        <div style="margin: 4px 0;">
+            🎖️ <b>Event:</b> ${event}
+        </div>
     `;
 }
+
 
 
   // Folder preview slideshow
