@@ -146,3 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+//hamburger
+function toggleMenu() {
+    const menu = document.querySelector('.mobile-menu');
+    if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'flex';
+    }
+}
+
