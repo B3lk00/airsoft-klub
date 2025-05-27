@@ -548,21 +548,36 @@ button:hover {
 }
 //---------------razmak izmedu slike i teksta --------------//
 #simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
-    flex-direction: column; /* složi elemente VERTIKALNO */
+    align-items: center; /* centriraj po sredini */
+    justify-content: center; /* centriraj po sredini */
+}
+
+#simple-lightbox-content {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 #lightbox-image {
-    max-width: 90%;
-    max-height: 80vh;
-    margin-bottom: 10px; /* mali razmak između slike i teksta */
+    max-width: 100%;
+    max-height: 80vh; /* NE skače previsoko */
+    margin-bottom: 8px;
 }
 
 #lightbox-caption {
     width: 100%;
     text-align: center;
+    font-size: 14px;
+    color: #fff;
 }
 //----------------------------//
 
