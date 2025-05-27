@@ -697,15 +697,15 @@ img {
 }
 
 @media (max-width: 768px) {
-#lightbox-caption {
-    margin-top: 10px;
-    color: #fff;
-    text-align: center;
-    word-wrap: break-word;
-    background: rgba(0, 0, 0, 0.85); /* tamna poluprozirna pozadina */
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 90%;
+    #lightbox-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.85);
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 90%;
 }
 //---------------------------//
 
