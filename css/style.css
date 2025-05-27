@@ -547,37 +547,38 @@ button:hover {
     margin-right: 8px;
 }
 //---------------razmak izmedu slike i teksta --------------//
-#simple-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center; /* centriraj po sredini */
-    justify-content: center; /* centriraj po sredini */
-}
-
-#simple-lightbox-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#lightbox-image {
-    max-width: 100%;
-    max-height: 80vh; /* NE skače previsoko */
-    margin-bottom: 8px;
-}
-
 #lightbox-caption {
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
+    background: rgba(0, 0, 0, 0.6); /* poluprozirna tamna pozadina */
     color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    font-size: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+}
+
+.caption-line {
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.caption-line strong {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.caption-line em {
+    font-style: italic;
+    margin-left: 3px;
+}
+
+.caption-line::before {
+    content: attr(data-icon);
+    margin-right: 8px;
 }
 //----------------------------//
 
