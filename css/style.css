@@ -696,21 +696,25 @@ img {
     }
 }
 //--------------------------//
-/* Sakrij hamburger na desktopu, prikaži na telefonu */
+/* Desktop meni ostaje vidljiv, mobilni skriven */
+.desktop-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
 .hamburger {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    position: fixed;
-    top: 15px;
-    right: 15px;
+    margin-left: auto;
     z-index: 1001;
 }
 
 .mobile-menu {
     display: none;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: 60px;
     right: 15px;
     background: rgba(0, 0, 0, 0.9);
@@ -726,7 +730,11 @@ img {
     font-size: 18px;
 }
 
+/* SAMO na telefonima (do 768px) */
 @media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
     .hamburger {
         display: block;
     }
