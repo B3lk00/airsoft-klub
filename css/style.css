@@ -660,44 +660,38 @@ img {
   }
 }
 //---------------------------//
-
-//--------------------------//
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #simple-lightbox {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     #lightbox-image {
-        width: 100%;
+        max-width: 100%;
         height: auto;
+        display: block;
     }
 
     #lightbox-caption {
-        font-size: 14px;
-        padding: 10px;
+        position: static; /* spusti caption ispod slike */
+        width: 90%;
+        margin-top: 10px;
+        background: rgba(0, 0, 0, 0.85); /* tamna podloga */
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    .lightbox-arrow {
-        font-size: 24px;
-    }
-
-#lightbox-image {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Samo na mobilnim */
-@media (max-width: 768px) {
-    #lightbox-caption {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.85);
-        padding: 10px;
-        border-radius: 10px;
-        max-width: 90%;
+    .lightbox-arrow,
+    #lightbox-close {
+        position: absolute; /* zadrži dugmad preko slike */
     }
 }
+//--------------------------//
+
 //---------------------------//
 
