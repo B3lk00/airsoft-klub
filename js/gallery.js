@@ -206,3 +206,19 @@ function unlockBodyScroll() {
 
 
 
+
+
+function lockBodyScroll() {
+  if (window.innerWidth <= 768) {
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');  // html element
+  }
+}
+
+function unlockBodyScroll() {
+  if (window.innerWidth <= 768) {
+    document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
+  }
+}
+
