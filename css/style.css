@@ -767,3 +767,24 @@ img {
     margin-right: 5px;
 }
 //-------------------------//
+/* Samo za mobilne uređaje */
+@media (max-width: 768px) {
+    #simple-lightbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #lightbox-image {
+        max-width: 90%;
+        height: auto;
+    }
+
+    #lightbox-caption {
+        order: 2;  /* Stavi caption ispod slike */
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+//-------------------------//
