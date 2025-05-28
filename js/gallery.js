@@ -188,36 +188,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
-
-
-function lockBodyScroll() {
-    document.body.classList.add('no-scroll');
-}
-
-function unlockBodyScroll() {
-    document.body.classList.remove('no-scroll');
-}
-
-// Kad se otvori lightbox
-imagesContainer.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IMG' && window.innerWidth <= 768) {
-        lockBodyScroll();
-    }
-});
-
-// Kad se zatvori lightbox
-lightboxClose.addEventListener('click', unlockBodyScroll);
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        unlockBodyScroll();
-    }
-});
-
-// Ako stisne Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        unlockBodyScroll();
-    }
-});
