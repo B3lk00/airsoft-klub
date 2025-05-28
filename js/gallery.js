@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('lightbox-next');
   const lightboxCaption = document.getElementById('lightbox-caption');
 
+    function lockBodyScroll() {
+    if (window.innerWidth <= 768) {
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function unlockBodyScroll() {
+    if (window.innerWidth <= 768) {
+        document.body.classList.remove('no-scroll');
+    }
+}
+
   let currentIndex = 0;
   let galleryImages = [];
 
@@ -81,12 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = Array.from(galleryImages).indexOf(e.target);
       updateLightboxContent(currentIndex);
       lightbox.classList.remove('hidden');
+      lockBodyScroll();  // <<< OVO DODAJ
     }
   });
 
   // Lightbox close
   lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
+    lockBodyScroll();  // <<< OVO DODAJ
   });
 
   // Previous image
@@ -107,12 +121,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
       lightbox.classList.add('hidden');
+        lockBodyScroll();  // <<< OVO DODAJ
     }
   });
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.add('hidden');
+        lockBodyScroll();  // <<< OVO DODAJ
     }
   });
 
