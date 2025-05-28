@@ -187,3 +187,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+
+function isMobile() {
+  return window.innerWidth <= 768;  // granica za mobilne uređaje
+}
+
+// Lightbox open
+imagesContainer.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    currentIndex = Array.from(galleryImages).indexOf(e.target);
+    updateLightboxContent(currentIndex);
+    lightbox.classList.remove('hidden');
+
+    if (isMobile()) {
+      document.body.classList.add('lightbox-open-mobile');  // samo na mobilnom
+    }
+  }
+});
+
+// Lightbox close
+function closeLightbox() {
+  lightbox.classList.add('hidden');
+  document.body.classList.remove('lightbox-open-mobile'); // ukloni klasu na zatvaranju
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+    closeLightbox();
+  }
+});
