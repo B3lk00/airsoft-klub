@@ -765,27 +765,33 @@ img {
     text-align: center;
     margin-right: 5px;
 }
-//-------------------------//
+//--------------ffffff-----------//
 @media (max-width: 768px) {
     #simple-lightbox {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* vertikalno složi */
         align-items: center;
         justify-content: center;
     }
 
     #simple-lightbox img {
+        order: 1;
         max-width: 90%;
         height: auto;
+        margin-bottom: 10px;
     }
 
     #lightbox-caption {
-        order: 2; /* Baci caption ispod slike */
+        order: 2;
         width: 100%;
         text-align: center;
         margin-top: 10px;
-        background-color: rgba(0, 0, 0, 0.7); /* tamna podloga ispod teksta*
-
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+}
 //-------------------------//
         @media (max-width: 768px) {
     #simple-lightbox {
