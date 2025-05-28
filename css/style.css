@@ -774,3 +774,26 @@ html.no-scroll, body.no-scroll {
   height: 100vh;
 }
 //-------------------------//
+.lightbox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/background.jpg');  /* <- tvoja slika */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Dodaj zatamnjenje preko slike koristeći pseudo-element */
+.lightbox-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);  /* crni sloj s 70% prozirnosti */
+}
+//--------------------------//
