@@ -100,7 +100,7 @@ function unlockBodyScroll() {
   // Lightbox close
   lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
-    lockBodyScroll();  // <<< OVO DODAJ
+    unlockBodyScroll();  // <<< OVO DODAJ
   });
 
   // Previous image
@@ -121,14 +121,14 @@ function unlockBodyScroll() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
       lightbox.classList.add('hidden');
-        lockBodyScroll();  // <<< OVO DODAJ
+        unlockBodyScroll();  // <<< OVO DODAJ
     }
   });
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.add('hidden');
-        lockBodyScroll();  // <<< OVO DODAJ
+        unlockBodyScroll();  // <<< OVO DODAJ
     }
   });
 
