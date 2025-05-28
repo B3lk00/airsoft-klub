@@ -190,37 +190,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function isMobile() {
-  return window.innerWidth <= 768;  // granica za mobilne uređaje
+
+
+// Zaključavanje scrolla samo za mobitele kad je lightbox otvoren
+function lockBodyScroll() {
+    document.body.style.overflow = 'hidden';
 }
 
-// Lightbox open
-imagesContainer.addEventListener('click', (e) => {
-  if (e.target.tagName === 'IMG') {
-    currentIndex = Array.from(galleryImages).indexOf(e.target);
-    updateLightboxContent(currentIndex);
-    lightbox.classList.remove('hidden');
+function unlockBodyScroll() {
+    document.body.style.overflow = '';
+}
 
-    if (isMobile()) {
-      document.body.classList.add('lightbox-open-mobile');  // samo na mobilnom
+// Kad se otvori lightbox (ako širina ekrana <= 768px)
+lightbox.addEventListener('transitionend', () => {
+    if (!lightbox.classList.contains('hidden') && window.innerWidth <= 768) {
+        lockBodyScroll();
+    } else {
+        unlockBodyScroll();
     }
-  }
 });
 
-// Lightbox close
-function closeLightbox() {
-  lightbox.classList.add('hidden');
-  document.body.classList.remove('lightbox-open-mobile'); // ukloni klasu na zatvaranju
-}
+// Takođe otključaj kad se prozor resize-a ili lightbox zatvori
+window.addEventListener('resize', () => {
+    if (lightbox.classList.contains('hidden') || window.innerWidth > 768) {
+        unlockBodyScroll();
+    }
+});
 
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-    closeLightbox();
-  }
-});
+lightboxClose.addEventListener('click', unlockBodyScroll);
+
