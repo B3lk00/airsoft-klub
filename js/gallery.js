@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const imageData = {
+        trening: [
+            'slika1.jpg',
+            'slika2.jpg',
+            'slika3.jpg'
+        ],
+        milsim: [
+            'milsim1.jpg',
+            'milsim2.jpg',
+            'milsim3.jpg',
+            'milsim4.jpg'
+        ]
+    };
+
+  
   const folders = document.querySelectorAll('.folder');
   const folderImages = document.getElementById('folder-images');
   const imagesContainer = document.getElementById('images-container');
