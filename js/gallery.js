@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const folderName = imgElement.getAttribute('data-folder');
     const imgData = imagesData[folderName][index];
 
+    // Postavi sliku u lightbox
+    lightboxImage.src = imgElement.src;
+
     let captionHTML = `
         <div class="caption-row">
             <span class="caption-icon">📍</span>
