@@ -207,20 +207,6 @@ function unlockBodyScroll() {
 
 
 
-
-//no scrol u lightboxu
-function lockBodyScroll() {
-    if (window.innerWidth <= 768) {
-        document.body.classList.add('no-scroll');
-    }
-}
-
-function unlockBodyScroll() {
-    if (window.innerWidth <= 768) {
-        document.body.classList.remove('no-scroll');
-    }
-}
-
 // Hook na lightbox open/close
 imagesContainer.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG') {
