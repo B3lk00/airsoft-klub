@@ -852,17 +852,17 @@ img {
 }
 //---------------------------//
 @media (max-width: 768px) {
-    #simple-lightbox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  #simple-lightbox {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 
-    #lightbox-caption {
-        margin-top: 10px;
-        text-align: center;
-        width: 90%;
-        word-wrap: break-word;
-    }
+  #lightbox-caption {
+    margin-top: 10px !important;
+    width: 90% !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+  }
 }
 //-------------------------------//
