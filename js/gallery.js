@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const imagesData = {
     trening: [
-      { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-10', club: 'AK Kojot' },
-      { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-12', club: 'AK Kojot' },
-      { src: 'assets/trening3.jpg', location: 'Banja Luka', date: '2024-05-15', club: 'AK Kojot' }
+      { src: 'assets/trening1.jpg', location: 'Sarajevo', date: '2024-05-10' },
+      { src: 'assets/trening2.jpg', location: 'Mostar', date: '2024-05-12' },
+      { src: 'assets/trening3.jpg', location: 'Banja Luka', date: '2024-05-15' }
     ],
     milsim: [
       { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01', club: 'AK Vukovi', event: 'Operacija Sjenka' },
