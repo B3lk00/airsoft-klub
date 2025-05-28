@@ -659,6 +659,35 @@ img {
   }
 }
 //---------------------------//
+/* Osnovni stil za lightbox na desktopu */
+#simple-lightbox {
+  display: flex;
+  flex-direction: row;  /* slika i caption su u redu */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
+
+/* Caption pored slike */
+#lightbox-caption {
+  max-width: 300px;
+  text-align: left;
+}
+
+/* Na mobilnim ekranima stavi caption ispod slike */
+@media (max-width: 768px) {
+  #simple-lightbox {
+    flex-direction: column !important; /* kolona: slika pa caption ispod */
+  }
+
+  #lightbox-caption {
+    max-width: 100% !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+  }
+}
 
 //--------------------------//
 /* Desktop meni */
@@ -731,12 +760,4 @@ img {
     text-align: center;
     margin-right: 5px;
 }
-//--------------ffffff-----------//
-
 //-------------------------//
-
-//--------------------------//
-
-//---------------------------//
-
-//-------------------------------//
