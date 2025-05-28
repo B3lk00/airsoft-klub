@@ -99,28 +99,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
- function updateLightboxContent(index) {
+  function updateLightboxContent(index) {
     const imgElement = galleryImages[index];
-    if (!imgElement) return;
-
     const folderName = imgElement.getAttribute('data-folder');
-    const imgData = (imagesData[folderName] && imagesData[folderName][index]) || {};
+    const imgData = imagesData[folderName][index];
 
-    const location = imgElement.getAttribute('data-location') || 'Nepoznata lokacija';
-    const date = imgElement.getAttribute('data-date') || 'Nepoznat datum';
-    const event = imgElement.getAttribute('data-event') || '';
-    const klub = imgElement.getAttribute('data-klub') || '';
-
-    let captionHtml = `<div><i class="fa fa-map-marker"></i> <b>Lokacija:</b> ${location}</div>`;
-    captionHtml += `<div><i class="fa fa-calendar"></i> <i>Datum:</i> ${date}</div>`;
+    let captionHTML = `
+        <div class="caption-row">
+            <span class="caption-icon">📍</span>
+            <span><b>Lokacija:</b> ${imgData.location || 'Nepoznata'}</span>
+        </div>
+        <div class="caption-row">
+            <span class="caption-icon">📅</span>
+            <span><b>Datum:</b> <i>${imgData.date || 'Nepoznat'}</i></span>
+        </div>
+    `;
 
     if (folderName === 'milsim') {
-        captionHtml += `<div><i class="fa fa-flag"></i> <b>Event:</b> ${event}</div>`;
-        captionHtml += `<div><i class="fa fa-users"></i> <b>Klub:</b> ${klub}</div>`;
+        captionHTML += `
+            <div class="caption-row">
+                <span class="caption-icon">🏰</span>
+                <span><b>Klub:</b> ${imgData.club || 'Nepoznat'}</span>
+            </div>
+            <div class="caption-row">
+                <span class="caption-icon">🎖️</span>
+                <span><b>Event:</b> ${imgData.event || 'Nepoznat'}</span>
+            </div>
+        `;
     }
 
-    lightboxCaption.innerHTML = captionHtml;
+    lightboxCaption.innerHTML = captionHTML;
 }
+
 
 
 
