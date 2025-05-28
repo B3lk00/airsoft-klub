@@ -687,14 +687,7 @@ img {
     margin-top: 15px !important;
     text-align: center !important;
   }
-
-body.no-scroll {
-    height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
 }
-
 //--------------------------//
 /* Desktop meni */
 .desktop-menu {
