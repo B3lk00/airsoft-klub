@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('lightbox-next');
   const lightboxCaption = document.getElementById('lightbox-caption');
 
-    function lockBodyScroll() {
+  let currentIndex = 0;
+  let galleryImages = [];
+
+        function lockBodyScroll() {
     if (window.innerWidth <= 768) {
         document.body.classList.add('no-scroll');
     }
@@ -37,9 +40,6 @@ function unlockBodyScroll() {
         document.body.classList.remove('no-scroll');
     }
 }
-
-  let currentIndex = 0;
-  let galleryImages = [];
 
   const imagesData = {
     trening: [
