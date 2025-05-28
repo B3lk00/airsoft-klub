@@ -834,5 +834,21 @@ img {
         cursor: pointer;
     }
 }
-
 //--------------------------//
+@media (max-width: 768px) {
+    #simple-lightbox {
+        flex-direction: column;
+    }
+
+    #simple-lightbox img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    #lightbox-caption {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+//---------------------------//
