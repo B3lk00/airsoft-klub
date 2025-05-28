@@ -688,11 +688,11 @@ img {
     text-align: center !important;
   }
 
-  body.lightbox-open-mobile {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
+body.no-scroll {
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 //--------------------------//
