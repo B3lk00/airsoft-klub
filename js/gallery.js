@@ -206,33 +206,3 @@ function unlockBodyScroll() {
 
 
 
-
-// Hook na lightbox open/close
-imagesContainer.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IMG') {
-        currentIndex = Array.from(galleryImages).indexOf(e.target);
-        updateLightboxContent(currentIndex);
-        lightbox.classList.remove('hidden');
-        lockBodyScroll();
-    }
-});
-
-lightboxClose.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-    unlockBodyScroll();
-});
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.classList.add('hidden');
-        unlockBodyScroll();
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-        lightbox.classList.add('hidden');
-        unlockBodyScroll();
-    }
-});
-
