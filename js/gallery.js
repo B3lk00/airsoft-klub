@@ -192,30 +192,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Zaključavanje scrolla samo za mobitele kad je lightbox otvoren
 function lockBodyScroll() {
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
 }
 
 function unlockBodyScroll() {
-    document.body.style.overflow = '';
+    document.body.classList.remove('no-scroll');
 }
 
-// Kad se otvori lightbox (ako širina ekrana <= 768px)
-lightbox.addEventListener('transitionend', () => {
-    if (!lightbox.classList.contains('hidden') && window.innerWidth <= 768) {
+// Kad se otvori lightbox
+imagesContainer.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG' && window.innerWidth <= 768) {
         lockBodyScroll();
-    } else {
-        unlockBodyScroll();
     }
 });
 
-// Takođe otključaj kad se prozor resize-a ili lightbox zatvori
-window.addEventListener('resize', () => {
-    if (lightbox.classList.contains('hidden') || window.innerWidth > 768) {
-        unlockBodyScroll();
-    }
-});
-
+// Kad se zatvori lightbox
 lightboxClose.addEventListener('click', unlockBodyScroll);
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        unlockBodyScroll();
+    }
+});
 
+// Ako stisne Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        unlockBodyScroll();
+    }
+});
