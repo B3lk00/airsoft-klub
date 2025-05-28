@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const images = imagesData[folderName];
 
       imagesContainer.innerHTML = '';
-      images.forEach(image => {
+     images.forEach(image => {
     const img = document.createElement('img');
     img.src = image.src;
     img.classList.add('lightbox-trigger');
@@ -42,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     img.setAttribute('data-date', image.date);
     img.setAttribute('data-club', image.club);
     img.setAttribute('data-event', image.event);
+    img.setAttribute('data-folder', folderName);  // <- OVO DODAJ
     imagesContainer.appendChild(img);
 });
+
 
 
       folderImages.classList.remove('hidden');
