@@ -796,7 +796,7 @@ html.no-scroll, body.no-scroll {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.2);  /* zatamnjenje slojem, NE preko opacity! */
+    background-color: rgba(0, 0, 0, 0.5);  /* zatamnjenje slojem, NE preko opacity! */
     pointer-events: none;  /* bitno da klikovi prolaze */
     z-index: 1;
 }
