@@ -794,6 +794,6 @@ html.no-scroll, body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);  /* crni sloj s 70% prozirnosti */
+    background: rgba(0, 0, 0, 0.7);  /* crni sloj s 70% prozirnosti */
 }
 //--------------------------//
