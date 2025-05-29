@@ -774,5 +774,29 @@ html.no-scroll, body.no-scroll {
   height: 100vh;
 }
 //----------da slika iza bude i da bude zatamljeno---------------//
+#simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);  /* TAMNA POZADINA */
+    background-image: url('assets/tvoja-pozadina.jpg');  /* Tvoja slika */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
+#simple-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 1001;  /* IZNAD POZADINE */
+}
+
+#simple-lightbox.hidden {
+    display: none;
+}
 //--------------------------//
