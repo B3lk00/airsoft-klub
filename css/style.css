@@ -774,42 +774,5 @@ html.no-scroll, body.no-scroll {
   height: 100vh;
 }
 //----------da slika iza bude i da bude zatamljeno---------------//
-#simple-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
 
-.lightbox-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('assets/background.jpg');  /* <-- provjeri ovo ime! */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);  /* zatamnjenje slojem, NE preko opacity! */
-    pointer-events: none;  /* bitno da klikovi prolaze */
-    z-index: 1;
-}
-
-.lightbox-content {
-    position: relative;
-    z-index: 2;
-}
-
-.lightbox-content img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-}
 //--------------------------//
