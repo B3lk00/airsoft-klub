@@ -780,8 +780,8 @@ html.no-scroll, body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);  /* TAMNA POZADINA */
-    background-image: url('assets/background.jpg');  /* Tvoja slika */
+    background-color: rgba(0, 0, 0, 0.85); /* Tamna pozadina */
+    background-image: url('assets/dark-background.jpg'); /* Tvoja pozadinska slika */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -793,7 +793,7 @@ html.no-scroll, body.no-scroll {
 #simple-lightbox img {
     max-width: 90%;
     max-height: 90%;
-    z-index: 1001;  /* IZNAD POZADINE */
+    z-index: 1001; /* Iznad pozadine */
 }
 
 #simple-lightbox.hidden {
