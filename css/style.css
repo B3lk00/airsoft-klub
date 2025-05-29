@@ -792,11 +792,12 @@ html.no-scroll, body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/your-background.jpg');  /* <-- tvoja pozadinska slika */
+    background-image: url('assets/airsoft-background.jpg');  /* <-- provjeri ovo ime! */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5;  /* <-- blago zatamni */
+    background-color: rgba(0, 0, 0, 0.5);  /* zatamnjenje slojem, NE preko opacity! */
+    pointer-events: none;  /* bitno da klikovi prolaze */
     z-index: 1;
 }
 
