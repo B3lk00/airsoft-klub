@@ -773,27 +773,42 @@ html.no-scroll, body.no-scroll {
   overflow: hidden;
   height: 100vh;
 }
-//-------------------------//
+//----------da slika iza bude i da bude zatamljeno---------------//
+#simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
 .lightbox-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/background.jpg');  /* <- tvoja slika */
+    background-image: url('assets/your-background.jpg');  /* <-- tvoja pozadinska slika */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;  /* <-- blago zatamni */
     z-index: 1;
 }
 
-/* Dodaj zatamnjenje preko slike koristeći pseudo-element */
-.lightbox-overlay::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);  /* crni sloj s 70% prozirnosti */
+.lightbox-content {
+    position: relative;
+    z-index: 2;
+}
+
+.lightbox-content img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 //--------------------------//
