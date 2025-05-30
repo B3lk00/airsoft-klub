@@ -780,8 +780,7 @@ html.no-scroll, body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Postavljamo tvoju sliku u pozadini */
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/background.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/dark-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -789,10 +788,11 @@ html.no-scroll, body.no-scroll {
     justify-content: center;
     z-index: 1000;
 }
+
 #simple-lightbox img {
     max-width: 90%;
     max-height: 90%;
     z-index: 1001;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7); /* eventualno blagi shadow */
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 //--------------------------//
