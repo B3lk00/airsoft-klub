@@ -796,3 +796,13 @@ html.no-scroll, body.no-scroll {
     box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 //--------------------------//
+.gallery-year {
+    width: 100%;
+    text-align: left;
+    font-size: 1.5em;
+    margin: 20px 0 10px;
+    color: #fff; /* ili po tvom dizajnu */
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+//-------------------------//
