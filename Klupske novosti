@@ -1,0 +1,23 @@
+<section id="klupske-novosti" class="news-section">
+    <h2>📰 Klupske novosti</h2>
+    <div class="news-list">
+        <!-- Jedna novost -->
+        <div class="news-item">
+            <h3>Nova oprema stigla!</h3>
+            <p>U klub su stigli novi prsluci i replike za članove. Dođite na trening u nedjelju da ih isprobamo!</p>
+            <span class="news-date">28. maj 2025.</span>
+        </div>
+
+        <div class="news-item">
+            <h3>Operacija Sjenka - izvještaj</h3>
+            <p>Naši igrači učestvovali su na velikom milsim eventu u Zenici. Pogledajte slike u galeriji!</p>
+            <span class="news-date">20. maj 2025.</span>
+        </div>
+
+        <div class="news-item">
+            <h3>Trening raspored</h3>
+            <p>Sljedeći trening je zakazan za 2. juni u 10h na starom poligonu. Obavezna prijava do petka!</p>
+            <span class="news-date">18. maj 2025.</span>
+        </div>
+    </div>
+</section>
