@@ -796,13 +796,46 @@ html.no-scroll, body.no-scroll {
     box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 //--------------------------//
-.gallery-year {
-    width: 100%;
-    text-align: left;
-    font-size: 1.5em;
-    margin: 20px 0 10px;
-    color: #fff; /* ili po tvom dizajnu */
-    border-bottom: 1px solid #555;
-    padding-bottom: 5px;
+.news-section {
+    padding: 40px 20px;
+    background-color: #1f1f1f;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.news-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #2b2b2b;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.news-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.4em;
+}
+
+.news-item p {
+    margin: 0 0 10px;
+    font-size: 1em;
+}
+
+.news-date {
+    font-size: 0.9em;
+    color: #aaa;
 }
 //-------------------------//
