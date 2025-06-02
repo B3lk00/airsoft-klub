@@ -782,36 +782,19 @@ html.no-scroll, body.no-scroll {
 }
 //-------------------------//
 #godisnji-plan {
-    position: relative;
     padding: 2rem;
+    background-color: #2f2f2f; /* tamno siva */
     border-radius: 12px;
     max-width: 1000px;
     margin: 2rem auto;
+    color: #e0e0e0;
+}
+
+#godisnji-plan h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
     color: #f0f0f0;
-    overflow: hidden;
-}
-
-#godisnji-plan::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('assets/dark-background.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px) brightness(0.4);
-    z-index: 0;
-}
-
-#godisnji-plan h2,
-.plan-list,
-.plan-month,
-.plan-month h3,
-.plan-month li {
-    position: relative;
-    z-index: 1;
 }
 
 .plan-list {
@@ -821,17 +804,17 @@ html.no-scroll, body.no-scroll {
 }
 
 .plan-month {
-    background: rgba(0, 0, 0, 0.6);
+    background: #3a3a3a; /* srednja siva */
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .plan-month h3 {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
-    color: #ddd;
-    border-bottom: 1px solid #333;
+    color: #ffffff;
+    border-bottom: 1px solid #555; /* svjetlija linija */
     padding-bottom: 0.3rem;
 }
 
@@ -844,7 +827,7 @@ html.no-scroll, body.no-scroll {
     margin-bottom: 0.3rem;
     padding-left: 1.5rem;
     position: relative;
-    color: #ccc;
+    color: #d0d0d0;
 }
 
 .plan-month li::before {
