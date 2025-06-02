@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Godisnji plan | Airsoft Klub Kojot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/smooth-scroll.js" defer></script>
+    <script src="js/anim.js" defer></script>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <nav class="navbar">
+    <a href="index.html">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <ul class="nav-links desktop-menu">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="about.html">O nama</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="contact.html">Godišnji plan</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <ul class="mobile-menu">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="about.html">O nama</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="contact.html">Godišnji plan</a></li>
+    </ul>
+</nav>
+
+    
+ <section id="godisnji-plan" class="p-6 bg-black bg-opacity-50 backdrop-blur rounded-xl max-w-4xl mx-auto my-10">
+    <h2 class="text-3xl font-bold text-center text-white mb-6">Godišnji plan aktivnosti</h2>
+    <div class="space-y-6">
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Mart</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>8. mart – HAWK Mostar</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">April</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>6. april – 1. termin AMF (Zenica)</li>
+                <li>12. april – Orion Tešanj</li>
+                <li>26. april – Asker Sarajevo</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Maj</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>10. maj – Operator Cazin</li>
+                <li>17. maj – Tvrđava Zenica</li>
+                <li>18. maj – 2. termin AMF (Gradačac)</li>
+                <li>24. maj – Zelene Ptice Žepče</li>
+                <li>31. maj – B-Unit Živinice</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Juni</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>7. juni – B-Unit Živinice</li>
+                <li>14. juni – Arduha Zenica</li>
+                <li>21. juni – 3. termin AMF (Sarajevo)</li>
+                <li>28. juni – Otpiljani Bužim</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Juli</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>12. juli – SCAR Visoko</li>
+                <li>19. juli – Bajraktar Kakanj</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Septembar</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>6. septembar – 4. termin AMF (Fojnica)</li>
+            </ul>
+        </div>
+        <div class="plan-month animate-fade-in-up">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Oktobar</h3>
+            <ul class="list-disc list-inside text-white">
+                <li>5. oktobar – BETA & Ljiljan Zenica</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+</style>
+
+    
+
+
+  <footer>
+    <div class="footer-content">
+        <p>© 2025 Airsoft Klub Kojot | Dizajn: TvojTim</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+function toggleMenu() {
+    const menu = document.querySelector('.mobile-menu');
+    if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'flex';
+    }
+}
+</script>
+
+    
+</body>
+</html>
