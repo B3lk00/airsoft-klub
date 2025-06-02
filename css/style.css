@@ -836,3 +836,21 @@ html.no-scroll, body.no-scroll {
     left: 0;
 }
 //-----------------------//
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* minimum cijele visine ekrana */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* glavni sadržaj raste da ispuni prostor */
+}
+
+footer {
+    background-color: #2f2f2f; /* ili što god želiš */
+    color: #f0f0f0;
+    text-align: center;
+    padding: 1rem;
+}
+//------------------------//
