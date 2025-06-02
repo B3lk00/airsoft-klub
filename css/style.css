@@ -798,7 +798,7 @@ html.no-scroll, body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/background.jpg');
+    background-image: url('assets/dark-background.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(8px) brightness(0.4);
