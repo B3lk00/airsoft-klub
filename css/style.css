@@ -804,7 +804,7 @@ html.no-scroll, body.no-scroll {
 }
 
 .plan-month {
-    background: #3a3a3a; /* srednja siva */
+    background: #121212; /* srednja siva */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
