@@ -836,21 +836,25 @@ html.no-scroll, body.no-scroll {
     left: 0;
 }
 //-----------------------//
-html, body {
-  height: 100%;
-  margin: 0;
+.page-section {
+  padding: 40px 20px;
+  background-color: #f8f9fa; /* blaga svetlija pozadina za kontrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+.page-section h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #556b2f; /* zelena boja, ili neka što ti pase */
+  padding-bottom: 8px;
+  max-width: fit-content;
 }
 
-main {
-  flex: 1;
-}
-
-footer {
-  /* ništa posebno, samo stoji na dnu */
+.page-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;   /* povećava razmak između redova za lakše čitanje */
+  margin-bottom: 16px; /* razmak između paragrafa */
+  max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
