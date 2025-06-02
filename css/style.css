@@ -836,5 +836,21 @@ html.no-scroll, body.no-scroll {
     left: 0;
 }
 //-----------------------//
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  /* ništa posebno, samo stoji na dnu */
+}
 //------------------------//
