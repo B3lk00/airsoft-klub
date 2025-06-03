@@ -727,25 +727,33 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
+/* Osnovni stil za lightbox na desktopu */
 #simple-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/dark-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  display: flex;
+  flex-direction: row;  /* slika i caption su u redu */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
 }
 
-#simple-lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    z-index: 1001;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+/* Caption pored slike */
+#lightbox-caption {
+  max-width: 300px;
+  text-align: left;
+}
+
+/* Na mobilnim ekranima stavi caption ispod slike */
+@media (max-width: 768px) {
+  #simple-lightbox {
+    flex-direction: column !important; /* kolona: slika pa caption ispod */
+  }
+
+  #lightbox-caption {
+    max-width: 100% !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+  }
 }
 //------------------------//
