@@ -327,7 +327,42 @@ button:hover {
   }
 }
 
+/* Lightbox styles */Add commentMore actions
+#simple-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
 
+#simple-lightbox.hidden {
+  display: none;
+}
+
+#simple-lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 25px #000;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+#lightbox-close:hover {
+  transform: scale(1.2);
+}
 //----------------//
 
 #back-to-home {
@@ -369,7 +404,53 @@ button:hover {
 
 //-------------------------------//
 
+#simple-lightbox {Add commentMore actions
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
 
+#simple-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+#lightbox-prev {
+    left: 30px;
+}
+
+#lightbox-next {
+    right: 30px;
+}
+
+.lightbox-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+}
 //-------------bolji tekst ispod slike i lokacija i opis-----------------//
 #lightbox-caption {
     background: rgba(0, 0, 0, 0.6); /* poluprozirna tamna pozadina */
@@ -518,7 +599,35 @@ img {
   }
 }
 //---------------------------//
+/* Osnovni stil za lightbox na desktopu */
+#simple-lightbox {
+  display: flex;
+  flex-direction: row;  /* slika i caption su u redu */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
 
+/* Caption pored slike */
+#lightbox-caption {
+  max-width: 300px;
+  text-align: left;
+}
+
+/* Na mobilnim ekranima stavi caption ispod slike */
+@media (max-width: 768px) {
+  #simple-lightbox {
+    flex-direction: column !important; /* kolona: slika pa caption ispod */
+  }
+
+  #lightbox-caption {
+    max-width: 100% !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+  }
+}
 //--------------------------//
 /* Desktop meni */
 .desktop-menu {
@@ -605,7 +714,27 @@ html.no-scroll, body.no-scroll {
   height: 100vh;
 }
 //----------da slika iza bude i da bude zatamljeno---------------//
+#simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/dark-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
+#simple-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 1001;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
 //--------------------------//
 .news-section {
     padding: 40px 20px;
