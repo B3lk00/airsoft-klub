@@ -327,7 +327,7 @@ button:hover {
   }
 }
 
-/* Lightbox styles */Add commentMore actions
+/* Lightbox styles */
 #simple-lightbox {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -363,6 +363,7 @@ button:hover {
 #lightbox-close:hover {
   transform: scale(1.2);
 }
+
 //----------------//
 
 #back-to-home {
@@ -403,8 +404,7 @@ button:hover {
 
 
 //-------------------------------//
-
-#simple-lightbox {Add commentMore actions
+#simple-lightbox {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.9);
@@ -451,6 +451,8 @@ button:hover {
 .lightbox-arrow:hover {
     transform: translateY(-50%) scale(1.2);
 }
+
+
 //-------------bolji tekst ispod slike i lokacija i opis-----------------//
 #lightbox-caption {
     background: rgba(0, 0, 0, 0.6); /* poluprozirna tamna pozadina */
@@ -856,5 +858,3 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
-
-//---------------------------//
