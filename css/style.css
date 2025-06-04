@@ -866,6 +866,29 @@ html.no-scroll, body.no-scroll {
   }
 }
 //-----------------------//
+.lightbox .prev,
+.lightbox .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 1001;
+  color: white;
+  font-size: 2em;
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev {
+  left: 10px;
+}
+
+.lightbox .next {
+  right: 10px;
+}
+
 /* Prikaz strelica i na mobilnim uređajima */
 @media (max-width: 768px) {
   .lightbox .prev,
