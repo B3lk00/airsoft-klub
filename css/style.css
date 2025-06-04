@@ -859,9 +859,20 @@ html.no-scroll, body.no-scroll {
 }
 //------------------------//
 @media (max-width: 768px) {
-  .prev,
-  .next {
-    display: block !important;
+  button.prev {
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  button.next {
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-content {
+    gap: 10px; /* manji razmak na mobilnom */
   }
 }
 //-----------------------//
