@@ -858,3 +858,10 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
+@media (max-width: 768px) {
+  .prev,
+  .next {
+    display: block !important;
+  }
+}
+//-----------------------//
