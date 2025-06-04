@@ -859,20 +859,18 @@ html.no-scroll, body.no-scroll {
 }
 //------------------------//
 @media (max-width: 768px) {
-  button.prev {
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  button.next {
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .lightbox-content {
-    gap: 10px; /* manji razmak na mobilnom */
+  .gallery img {
+    width: 260px;
+    height: auto;
+    object-fit: cover;
   }
 }
 //-----------------------//
+/* Prikaz strelica i na mobilnim uređajima */
+@media (max-width: 768px) {
+  .lightbox .prev,
+  .lightbox .next {
+    display: block;
+  }
+}
+//---------------------///
