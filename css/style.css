@@ -412,6 +412,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     z-index: 999;
+    position: relative; /* ← dodaj ovo */
 }
 
 #simple-lightbox img {
@@ -438,6 +439,7 @@ button:hover {
     transform: translateY(-50%);
     padding: 10px;
     transition: transform 0.2s;
+    z-index: 1000; /* ← dodaj ovo */
 }
 
 #lightbox-prev {
@@ -452,6 +454,11 @@ button:hover {
     transform: translateY(-50%) scale(1.2);
 }
 
+@media (max-width: 768px) {
+  .lightbox-arrow {
+    display: block !important;
+  }
+}
 
 //-------------bolji tekst ispod slike i lokacija i opis-----------------//
 #lightbox-caption {
