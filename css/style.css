@@ -411,7 +411,7 @@ button:hover {
 
   #images-container img {
     width: 50vw;           /* širina 45% širine ekrana */
-    height: 50vw;          /* visina automatski izračunata */
+    height: 20vw;          /* visina automatski izračunata */
     object-fit: cover;     /* da ne budu razvučene */
     border-radius: 6px;
   }
