@@ -101,19 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
       { src: 'assets/milsim23.jpg', location: 'Bihać', date: '2025.05.03', club: 'ASK Operator', event: 'OP HEAVY SHADOW' },
       { src: 'assets/milsim24.jpg', location: 'Bihać', date: '2025.05.03', club: 'ASK Operator', event: 'OP HEAVY SHADOW' },
       { src: 'assets/milsim25.jpg', location: 'Bihać', date: '2025.05.03', club: 'ASK Operator', event: 'OP HEAVY SHADOW' },
-      { src: 'assets/milsim26.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim27.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim28.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim29.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim30.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim31.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim32.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim33.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim34.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim35.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim36.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim37.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' },
-      { src: 'assets/milsim38.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'ASK B-Unit' }
+      { src: 'assets/milsim26.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim27.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim28.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim29.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim30.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim31.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim32.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim33.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim34.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim35.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim36.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim37.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' },
+      { src: 'assets/milsim38.jpg', location: 'Živinice', date: '2025.05.31', club: 'ASK B-Unit', event: 'El Gueera' }
     ]
   };
 
