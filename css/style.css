@@ -901,5 +901,18 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
+/* SAMO za Galerija stranicu */
+body.gallery-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+body.gallery-page #gallery-section {
+  flex: 1;
+}
+
+body.gallery-page footer {
+  margin-top: auto;
+}
 //---------------------///
