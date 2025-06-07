@@ -859,7 +859,16 @@ html.no-scroll, body.no-scroll {
 }
 //------------------------//
 .lightbox-arrow {
-  display: block !important;
-  z-index: 9999 !important;
+    z-index: 1100;
+    padding: 20px;
+    touch-action: manipulation;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .lightbox-arrow {
+        font-size: 40px;
+        padding: 15px;
+    }
 }
 //---------------------///
