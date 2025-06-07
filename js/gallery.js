@@ -96,25 +96,24 @@ function unlockBodyScroll() {
     ]
   };
 
-  folders.forEach(folder => {
+folders.forEach(folder => {
     folder.addEventListener('click', () => {
       const folderName = folder.getAttribute('data-folder');
       const images = imagesData[folderName];
 
       imagesContainer.innerHTML = '';
-     images.forEach(image => {
-    const img = document.createElement('img');
-    img.src = image.src;
-    img.classList.add('lightbox-trigger');
-    img.setAttribute('data-location', image.location);
-    img.setAttribute('data-date', image.date);
-    img.setAttribute('data-club', image.club);
-    img.setAttribute('data-event', image.event);
-    img.setAttribute('data-folder', folderName);  // <- OVO DODAJ
-    imagesContainer.appendChild(img);
-});
-
-
+      images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.classList.add('lightbox-trigger');
+        img.setAttribute('data-location', image.location);
+        img.setAttribute('data-date', image.date);
+        img.setAttribute('data-club', image.club);
+        img.setAttribute('data-event', image.event);
+        img.setAttribute('data-folder', folderName);
+        img.loading = 'lazy'; // lazy loading za performanse
+        imagesContainer.appendChild(img);
+      });
 
       folderImages.classList.remove('hidden');
 
@@ -134,17 +133,17 @@ function unlockBodyScroll() {
       currentIndex = Array.from(galleryImages).indexOf(e.target);
       updateLightboxContent(currentIndex);
       lightbox.classList.remove('hidden');
-      lockBodyScroll();  // <<< OVO DODAJ
+      lockBodyScroll();
     }
   });
 
   // Lightbox close
   lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
-    unlockBodyScroll();  // <<< OVO DODAJ
+    unlockBodyScroll();
   });
 
- // Previous image
+  // Previous image
   prevBtn.addEventListener('click', () => {
     if (galleryImages.length === 0) return;
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
@@ -162,57 +161,53 @@ function unlockBodyScroll() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
       lightbox.classList.add('hidden');
-        unlockBodyScroll();  // <<< OVO DODAJ
+      unlockBodyScroll();
     }
   });
 
+  // Close on clicking outside the image
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.add('hidden');
-        unlockBodyScroll();  // <<< OVO DODAJ
+      unlockBodyScroll();
     }
   });
 
   function updateLightboxContent(index) {
     const imgElement = galleryImages[index];
     const folderName = imgElement.getAttribute('data-folder');
-    const imgData = imagesData[folderName][index];
+    const imgSrc = imgElement.src.split('/').pop(); // ime fajla
 
-    // Postavi sliku u lightbox
+    const imgData = imagesData[folderName].find(image => image.src.includes(imgSrc));
+
     lightboxImage.src = imgElement.src;
 
     let captionHTML = `
-        <div class="caption-row">
-            <span class="caption-icon">📍</span>
-            <span><b>Lokacija:</b> ${imgData.location || 'Nepoznata'}</span>
-        </div>
-        <div class="caption-row">
-            <span class="caption-icon">📅</span>
-            <span><b>Datum:</b> <i>${imgData.date || 'Nepoznat'}</i></span>
-        </div>
+      <div class="caption-row">
+        <span class="caption-icon">📍</span>
+        <span><b>Lokacija:</b> ${imgData?.location || 'Nepoznata'}</span>
+      </div>
+      <div class="caption-row">
+        <span class="caption-icon">📅</span>
+        <span><b>Datum:</b> <i>${imgData?.date || 'Nepoznat'}</i></span>
+      </div>
     `;
 
     if (folderName === 'milsim') {
-        captionHTML += `
-            <div class="caption-row">
-                <span class="caption-icon">🏰</span>
-                <span><b>Klub:</b> ${imgData.club || 'Nepoznat'}</span>
-            </div>
-            <div class="caption-row">
-                <span class="caption-icon">🎖️</span>
-                <span><b>Event:</b> ${imgData.event || 'Nepoznat'}</span>
-            </div>
-        `;
+      captionHTML += `
+        <div class="caption-row">
+          <span class="caption-icon">🏰</span>
+          <span><b>Klub:</b> ${imgData?.club || 'Nepoznat'}</span>
+        </div>
+        <div class="caption-row">
+          <span class="caption-icon">🎖️</span>
+          <span><b>Event:</b> ${imgData?.event || 'Nepoznat'}</span>
+        </div>
+      `;
     }
 
     lightboxCaption.innerHTML = captionHTML;
-}
-
-
-
-
-
-
+  }
 
   // Folder preview slideshow
   const folderImagesPreview = {
@@ -239,20 +234,16 @@ function unlockBodyScroll() {
   // Back to home button
   const backBtn = document.getElementById('back-to-home');
   if (backBtn) {
-    backBtn.addEventListener('click', function() {
+    backBtn.addEventListener('click', () => {
       window.location.href = 'index.html';
     });
   }
 });
 
-
-
-
-
 function lockBodyScroll() {
   if (window.innerWidth <= 768) {
     document.body.classList.add('no-scroll');
-    document.documentElement.classList.add('no-scroll');  // html element
+    document.documentElement.classList.add('no-scroll');
   }
 }
 
@@ -262,4 +253,3 @@ function unlockBodyScroll() {
     document.documentElement.classList.remove('no-scroll');
   }
 }
-
