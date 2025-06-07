@@ -859,17 +859,27 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
-.lightbox-arrow {
-    z-index: 1100;
-    padding: 20px;
-    touch-action: manipulation;
-    pointer-events: auto;
-}
-
+/* Strelice samo za telefone (ekrani do 768px) */
 @media (max-width: 768px) {
-    .lightbox-arrow {
-        font-size: 40px;
-        padding: 15px;
-    }
+  .lightbox-arrow {
+    font-size: 5rem;       /* veće strelice za lakši touch */
+    top: auto;
+    bottom: 40px;          /* stavimo strelice blizu dna */
+    padding: 0 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    user-select: none;
+    /* pozicioniramo lijevu i desnu strelicu na dno i strane */
+  }
+
+  #lightbox-prev {
+    left: 20px;
+    bottom: 40px;
+  }
+
+  #lightbox-next {
+    right: 20px;
+    bottom: 40px;
+  }
 }
 //---------------------///
