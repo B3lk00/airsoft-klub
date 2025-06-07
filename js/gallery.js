@@ -112,15 +112,16 @@ folders.forEach(folder => {
   });
 
   // Lightbox open
-const allImages = Array.from(imagesContainer.querySelectorAll('img'));
-currentIndex = allImages.indexOf(e.target);
-galleryImages = allImages; // osvježi listu
-updateLightboxContent(currentIndex);
-lightbox.classList.remove('hidden');
-lockBodyScroll();
-
-    }
-  });
+imagesContainer.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    const allImages = Array.from(imagesContainer.querySelectorAll('img'));
+    currentIndex = allImages.indexOf(e.target);
+    galleryImages = allImages; // osvježi listu
+    updateLightboxContent(currentIndex);
+    lightbox.classList.remove('hidden');
+    lockBodyScroll();
+  }
+});
 
   // Lightbox close
   lightboxClose.addEventListener('click', () => {
