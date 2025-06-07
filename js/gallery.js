@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
   const folders = document.querySelectorAll('.folder');
   const folderImages = document.getElementById('folder-images');
   const imagesContainer = document.getElementById('images-container');
@@ -13,21 +14,23 @@
   let currentIndex = 0;
   let galleryImages = [];
 
-        function lockBodyScroll() {
+  function lockBodyScroll() {
     if (window.innerWidth <= 768) {
-        document.body.classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
+      document.documentElement.classList.add('no-scroll');
     }
-}
+  }
 
-function unlockBodyScroll() {
+  function unlockBodyScroll() {
     if (window.innerWidth <= 768) {
-        document.body.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
+      document.documentElement.classList.remove('no-scroll');
     }
-}
+  }
 
   const imagesData = {
     trening: [
-      { src: 'assets/trening4.jpg', location: 'Sanski Most', date: '2024-05-12' },
+        { src: 'assets/trening4.jpg', location: 'Sanski Most', date: '2024-05-12' },
         { src: 'assets/trening5.jpg', location: 'Sanski Most', date: '2024-05-12' },
         { src: 'assets/trening6.jpg', location: 'Sanski Most', date: '2024-05-12' },
         { src: 'assets/trening7.jpg', location: 'Sanski Most', date: '2024-05-12' },
@@ -75,15 +78,16 @@ function unlockBodyScroll() {
     milsim: [
       { src: 'assets/milsim1.jpg', location: 'Tuzla', date: '2024-06-01', club: 'AK Vukovi', event: 'Operacija Sjenka' },
       { src: 'assets/milsim2.jpg', location: 'Zenica', date: '2024-06-05', club: 'AK Vukovi', event: 'Operacija Sjenka' },
-      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08', club: 'AK Vukovi', event: 'Operacija Sjenka' },
-      { src: 'assets/milsim4.jpg', location: 'Sanski Most', date: '2024-06-08', club: 'AK Vukovi', event: 'Operacija Sjenka' }
+      { src: 'assets/milsim3.jpg', location: 'Doboj', date: '2024-06-08', club: 'AK Vukovi', event: 'Operacija Sjenka' }
     ]
   };
 
-folders.forEach(folder => {
+  folders.forEach(folder => {
     folder.addEventListener('click', () => {
       const folderName = folder.getAttribute('data-folder');
       const images = imagesData[folderName];
+
+      if (!images) return;
 
       imagesContainer.innerHTML = '';
       images.forEach(image => {
@@ -92,17 +96,15 @@ folders.forEach(folder => {
         img.classList.add('lightbox-trigger');
         img.setAttribute('data-location', image.location);
         img.setAttribute('data-date', image.date);
-        img.setAttribute('data-club', image.club);
-        img.setAttribute('data-event', image.event);
+        img.setAttribute('data-club', image.club || '');
+        img.setAttribute('data-event', image.event || '');
         img.setAttribute('data-folder', folderName);
-        img.loading = 'lazy'; // lazy loading za performanse
+        img.loading = 'lazy';
         imagesContainer.appendChild(img);
       });
 
       folderImages.classList.remove('hidden');
-
-      // Update galleryImages list
-      galleryImages = document.querySelectorAll('#images-container img');
+      galleryImages = Array.from(imagesContainer.querySelectorAll('img'));
     });
   });
 
@@ -111,39 +113,33 @@ folders.forEach(folder => {
     imagesContainer.innerHTML = '';
   });
 
-  // Lightbox open
-imagesContainer.addEventListener('click', (e) => {
-  if (e.target.tagName === 'IMG') {
-    const allImages = Array.from(imagesContainer.querySelectorAll('img'));
-    currentIndex = allImages.indexOf(e.target);
-    galleryImages = allImages; // osvježi listu
-    updateLightboxContent(currentIndex);
-    lightbox.classList.remove('hidden');
-    lockBodyScroll();
-  }
-});
+  imagesContainer.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+      galleryImages = Array.from(imagesContainer.querySelectorAll('img'));
+      currentIndex = galleryImages.indexOf(e.target);
+      updateLightboxContent(currentIndex);
+      lightbox.classList.remove('hidden');
+      lockBodyScroll();
+    }
+  });
 
-  // Lightbox close
   lightboxClose.addEventListener('click', () => {
     lightbox.classList.add('hidden');
     unlockBodyScroll();
   });
 
-  // Previous image
   prevBtn.addEventListener('click', () => {
     if (galleryImages.length === 0) return;
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
     updateLightboxContent(currentIndex);
   });
 
-  // Next image
   nextBtn.addEventListener('click', () => {
     if (galleryImages.length === 0) return;
     currentIndex = (currentIndex + 1) % galleryImages.length;
     updateLightboxContent(currentIndex);
   });
 
-  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
       lightbox.classList.add('hidden');
@@ -151,7 +147,6 @@ imagesContainer.addEventListener('click', (e) => {
     }
   });
 
-  // Close on clicking outside the image
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.add('hidden');
@@ -162,8 +157,7 @@ imagesContainer.addEventListener('click', (e) => {
   function updateLightboxContent(index) {
     const imgElement = galleryImages[index];
     const folderName = imgElement.getAttribute('data-folder');
-    const imgSrc = imgElement.src.split('/').pop(); // ime fajla
-
+    const imgSrc = imgElement.src.split('/').pop();
     const imgData = imagesData[folderName].find(image => image.src.includes(imgSrc));
 
     lightboxImage.src = imgElement.src;
@@ -208,16 +202,15 @@ imagesContainer.addEventListener('click', (e) => {
 
     if (!imageDiv || !images || images.length === 0) return;
 
-    let currentIndex = 0;
-    imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+    let index = 0;
+    imageDiv.style.backgroundImage = `url('assets/${images[index]}')`;
 
     setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      imageDiv.style.backgroundImage = `url('assets/${images[currentIndex]}')`;
+      index = (index + 1) % images.length;
+      imageDiv.style.backgroundImage = `url('assets/${images[index]}')`;
     }, 3000);
   });
 
-  // Back to home button
   const backBtn = document.getElementById('back-to-home');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
@@ -225,17 +218,3 @@ imagesContainer.addEventListener('click', (e) => {
     });
   }
 });
-
-function lockBodyScroll() {
-  if (window.innerWidth <= 768) {
-    document.body.classList.add('no-scroll');
-    document.documentElement.classList.add('no-scroll');
-  }
-}
-
-function unlockBodyScroll() {
-  if (window.innerWidth <= 768) {
-    document.body.classList.remove('no-scroll');
-    document.documentElement.classList.remove('no-scroll');
-  }
-}
