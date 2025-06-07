@@ -410,7 +410,7 @@ button:hover {
   }
 
   #images-container img {
-    width: 20vw;           /* širina 45% širine ekrana */
+    width: calc(50% - 10px);  /* 2 slike po redu sa razmakom */  
     height: 50vw;          /* visina automatski izračunata */
     object-fit: cover;     /* da ne budu razvučene */
     border-radius: 6px;
