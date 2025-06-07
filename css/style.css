@@ -430,30 +430,58 @@ button:hover {
 }
 
 .lightbox-arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 50px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    transform: translateY(-50%);
-    padding: 10px;
-    transition: transform 0.2s;
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+  transform: translateY(-50%);
+  z-index: 1100;
+  display: block; /* osiguraj da nisu hidden */
 }
 
 #lightbox-prev {
-    left: 30px;
+  left: 10px;
 }
 
 #lightbox-next {
-    right: 30px;
+  right: 10px;
 }
 
-.lightbox-arrow:hover {
-    transform: translateY(-50%) scale(1.2);
+@media (max-width: 768px) {
+  .lightbox-arrow {
+    font-size: 4rem;
+    top: auto;
+    bottom: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px 15px;
+    transform: none;
+  }
+
+  #lightbox-prev {
+    left: 20px;
+    bottom: 40px;
+  }
+
+  #lightbox-next {
+    right: 20px;
+    bottom: 40px;
+  }
 }
 
-
+/* Dodatno osiguraj da lightbox ne blokira strelice */
+#simple-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 //-------------bolji tekst ispod slike i lokacija i opis-----------------//
 #lightbox-caption {
     background: rgba(0, 0, 0, 0.6); /* poluprozirna tamna pozadina */
@@ -859,29 +887,5 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
-/* Strelice samo za telefone (ekrani do 768px) */
-@media (max-width: 768px) {
-  .lightbox-arrow {
-    font-size: 5rem;       /* veće strelice za lakši touch */
-    top: auto;
-    bottom: 40px;          /* stavimo strelice blizu dna */
-    padding: 0 20px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    user-select: none;  /* pozicioniramo lijevu i desnu strelicu na dno i strane */
-    z-index: 1100;  /* da budu iznad svega */
-}
 
-  }
-
-  #lightbox-prev {
-    left: 20px;
-    bottom: 40px;
-  }
-
-  #lightbox-next {
-    right: 20px;
-    bottom: 40px;
-  }
-}
 //---------------------///
