@@ -410,8 +410,8 @@ button:hover {
   }
 
   #images-container img {
-    width: 45vw;           /* širina 45% širine ekrana */
-    height: 30vw;          /* visina automatski izračunata */
+    width: 70vw;           /* širina 45% širine ekrana */
+    height: 20vw;          /* visina automatski izračunata */
     object-fit: cover;     /* da ne budu razvučene */
     border-radius: 6px;
   }
