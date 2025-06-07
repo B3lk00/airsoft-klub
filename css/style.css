@@ -403,7 +403,7 @@ button:hover {
 }
 @media (max-width: 768px) {
   #images-container img {
-    max-width: 200px;   /* manje slike na telefonu */
+    max-width: 100px;   /* manje slike na telefonu */
     height: 160px;
   }
 }
