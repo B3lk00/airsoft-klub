@@ -1,19 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const imageData = {
-        trening: [
-            'slika1.jpg',
-            'slika2.jpg',
-            'slika3.jpg'
-        ],
-        milsim: [
-            'milsim1.jpg',
-            'milsim2.jpg',
-            'milsim3.jpg',
-            'milsim4.jpg'
-        ]
-    };
-
-  
   const folders = document.querySelectorAll('.folder');
   const folderImages = document.getElementById('folder-images');
   const imagesContainer = document.getElementById('images-container');
@@ -128,12 +112,13 @@ folders.forEach(folder => {
   });
 
   // Lightbox open
-  imagesContainer.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IMG') {
-      currentIndex = Array.from(galleryImages).indexOf(e.target);
-      updateLightboxContent(currentIndex);
-      lightbox.classList.remove('hidden');
-      lockBodyScroll();
+const allImages = Array.from(imagesContainer.querySelectorAll('img'));
+currentIndex = allImages.indexOf(e.target);
+galleryImages = allImages; // osvježi listu
+updateLightboxContent(currentIndex);
+lightbox.classList.remove('hidden');
+lockBodyScroll();
+
     }
   });
 
