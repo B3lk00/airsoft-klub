@@ -404,7 +404,7 @@ button:hover {
 @media (max-width: 768px) {
   #images-container img {
     max-width: 260px;   /* manje slike na telefonu */
-    height: 260px;
+    height: 60px;
   }
 }
 //-------------------------------//
