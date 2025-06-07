@@ -868,8 +868,10 @@ html.no-scroll, body.no-scroll {
     padding: 0 20px;
     background: rgba(0,0,0,0.5);
     border-radius: 50%;
-    user-select: none;
-    /* pozicioniramo lijevu i desnu strelicu na dno i strane */
+    user-select: none;  /* pozicioniramo lijevu i desnu strelicu na dno i strane */
+    z-index: 1100;  /* da budu iznad svega */
+}
+
   }
 
   #lightbox-prev {
