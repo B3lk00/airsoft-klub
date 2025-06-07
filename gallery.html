@@ -7,72 +7,87 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/gallery.js" defer></script>
   <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body.gallery-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #gallery-section {
+      flex: 1;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    .footer-content .social-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-content .social-links a:hover {
+      color: white;
+    }
+  </style>
 </head>
+
 <body class="gallery-page">
-
   <section id="gallery-section">
-  <h2>Galerija</h2>
+    <h2>Galerija</h2>
 
-<!-- FOLDERI -->
-<div class="gallery-folders">
-  <div class="folder" data-folder="trening">
-    <img src="assets/trening-folder.jpg" alt="Trening Folder">
-    <p>Slike sa treninga</p>
-  </div>
-  <div class="folder" data-folder="milsim">
-    <img src="assets/milsim-folder.jpg" alt="Milsim Folder">
-    <p>Slike sa Milsim-Susreta</p>
+    <!-- FOLDERI -->
+    <div class="gallery-folders">
+      <div class="folder" data-folder="trening">
+        <img src="assets/trening-folder.jpg" alt="Trening Folder">
+        <p>Slike sa treninga</p>
       </div>
-</div>
-
-   <!-- Dugme za nazad na početnu stranicu -->
-  <button id="back-to-home">Nazad na početnu</button>
-  
-  <div id="folder-images" class="hidden">
-  <div id="images-container"></div>
-  <button id="back-button">Nazad</button>
-</div>
-
-
-<div id="simple-lightbox" class="hidden">
-    <span id="lightbox-close">&times;</span>
-     <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span> <!-- levo -->
-     <img id="lightbox-image" src="" alt="">
-     <span id="lightbox-next" class="lightbox-arrow">&#10095;</span> <!-- desno -->
-     <div id="lightbox-caption" style="color: #fff; margin-top: 10px; text-align: center;"> </div>
-  </div>
-
-
-
-
-
-<footer>
-    <div class="footer-content">
-        <p>© 2025 Airsoft Klub Kojot | Dizajn: K4 </p>
-        <div class="social-links">
-             <a href="https://www.facebook.com/profile.php?id=100091837857196" target="_blank">Facebook</a> |
-             <a href="https://www.instagram.com/ask_kojot/" target="_blank">Instagram</a> |
-             <a href="https://www.tiktok.com/@ask.kojot" target="_blank">Tik Tok</a> |
-        </div>
+      <div class="folder" data-folder="milsim">
+        <img src="assets/milsim-folder.jpg" alt="Milsim Folder">
+        <p>Slike sa Milsim-Susreta</p>
+      </div>
     </div>
-</footer>
 
-<style>
-  body.gallery-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+    <!-- Dugme za nazad na početnu stranicu -->
+    <button id="back-to-home">Nazad na početnu</button>
 
-  #gallery-section {
-    flex-grow: 1;
-  }
+    <div id="folder-images" class="hidden">
+      <div id="images-container"></div>
+      <button id="back-button">Nazad</button>
+    </div>
 
-  footer {
-    margin-top: auto;
-  }
-</style>
+    <div id="simple-lightbox" class="hidden">
+      <span id="lightbox-close">&times;</span>
+      <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span>
+      <img id="lightbox-image" src="" alt="">
+      <span id="lightbox-next" class="lightbox-arrow">&#10095;</span>
+      <div id="lightbox-caption" style="color: #fff; margin-top: 10px; text-align: center;"> </div>
+    </div>
+  </section>
 
-
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Airsoft Klub Kojot | Dizajn: K4 </p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100091837857196" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/ask_kojot/" target="_blank">Instagram</a> |
+        <a href="https://www.tiktok.com/@ask.kojot" target="_blank">Tik Tok</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
