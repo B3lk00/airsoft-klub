@@ -858,5 +858,8 @@ html.no-scroll, body.no-scroll {
   max-width: 720px;    /* da tekst ne bude preširok */
 }
 //------------------------//
-
+.lightbox-arrow {
+  display: block !important;
+  z-index: 9999 !important;
+}
 //---------------------///
