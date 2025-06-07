@@ -144,19 +144,19 @@ function unlockBodyScroll() {
     unlockBodyScroll();  // <<< OVO DODAJ
   });
 
-  imagesContainer.addEventListener('click', (e) => {
-  if (e.target.tagName === 'IMG') {
-    currentIndex = Array.from(galleryImages).indexOf(e.target);
+ // Previous image
+  prevBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
     updateLightboxContent(currentIndex);
-    lightbox.classList.remove('hidden');
-    lockBodyScroll();
+  });
 
-    // 🚨 Dodaj ovo OVDE:
-    prevBtn = document.getElementById('lightbox-prev');
-    nextBtn = document.getElementById('lightbox-next');
-  }
-});
-
+  // Next image
+  nextBtn.addEventListener('click', () => {
+    if (galleryImages.length === 0) return;
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateLightboxContent(currentIndex);
+  });
 
   // Close on Escape
   document.addEventListener('keydown', (e) => {
