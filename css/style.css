@@ -402,11 +402,21 @@ button:hover {
   transform: scale(1.05);
 }
 @media (max-width: 768px) {
+  #images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
   #images-container img {
-    max-width: 200px;   /* manje slike na telefonu */
-    height: 200px;
+    width: 45vw;           /* širina 45% širine ekrana */
+    height: 30vw;          /* visina automatski izračunata */
+    object-fit: cover;     /* da ne budu razvučene */
+    border-radius: 6px;
   }
 }
+
 //-------------------------------//
 #simple-lightbox {
     position: fixed;
